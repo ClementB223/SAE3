@@ -7,7 +7,7 @@
   overflow: hidden;
   isolation: isolate;
   background: #050404;
-  color: var(--creme);
+  color: var(--blanc);
 }
 
 .intro__fond {
@@ -79,7 +79,7 @@
   font-size: 12px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #e9c46a;
+  color: var(--or);
   opacity: 0;
   animation: intro-monte 0.9s ease-out 0.6s forwards;
 }
@@ -101,7 +101,7 @@
 }
 
 .intro__ligne--2 {
-  color: #e8202d;
+  color: var(--rouge);
 }
 
 .intro__lettre {
@@ -114,10 +114,10 @@
 .intro__serif {
   display: inline-block;
   margin-left: 0.18em;
-  font-family: var(--police-serif);
+  font-family: var(--police-titre);
   font-style: italic;
   text-transform: none;
-  color: var(--creme);
+  color: var(--blanc);
   opacity: 0;
   filter: blur(14px);
   transform: translateY(20%);
@@ -134,14 +134,14 @@
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--creme);
+  color: var(--blanc);
   text-decoration: none;
   opacity: 0;
   animation: intro-monte 0.9s ease-out 2.8s forwards;
 }
 
 .intro__cta:hover {
-  color: #e9c46a;
+  color: var(--or);
 }
 
 .intro__trait {
@@ -149,7 +149,7 @@
   width: 1px;
   height: 56px;
   overflow: hidden;
-  background: rgba(242, 237, 227, 0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .intro__trait::after {
@@ -159,7 +159,7 @@
   top: -40%;
   width: 1px;
   height: 40%;
-  background: var(--creme);
+  background: var(--blanc);
   animation: intro-descente 1.8s ease-in-out 3.2s infinite;
 }
 

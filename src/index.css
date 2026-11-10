@@ -1,18 +1,20 @@
 :root {
-  --rouge: #b3121e;
-  --encre: #141414;
-  --creme: #f2ede3;
+  --orange: #ff5b29;
+  --blanc: #ffffff;
+  --or: #c5a059;
+  --noir: #000000;
+  --rouge: #b5121b;
+  --rouge-fonce: #8e0e15;
   --gris: #57524a;
 
-  --police-titre: 'Anton', 'Impact', sans-serif;
-  --police-texte: 'Archivo', system-ui, sans-serif;
-  --police-serif: 'Instrument Serif', Georgia, serif;
+  --police-titre: 'Albra', 'Albra Regular', Georgia, 'Times New Roman', serif;
+  --police-texte: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --marge: 40px;
 
   font-family: var(--police-texte);
-  color: var(--encre);
-  background: var(--creme);
+  color: var(--noir);
+  background: var(--blanc);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,7 +27,7 @@
 
 body {
   margin: 0;
-  background: var(--creme);
+  background: var(--blanc);
   overflow-x: hidden;
 }
 
@@ -46,7 +48,7 @@ img {
   height: 56px;
   padding: 0 30px;
   background: var(--rouge);
-  color: var(--creme);
+  color: var(--blanc);
   font-family: var(--police-texte);
   font-weight: 700;
   font-size: 14px;
@@ -56,7 +58,7 @@ img {
 }
 
 .bouton:hover {
-  background: #8f0e18;
+  background: var(--rouge-fonce);
 }
 
 .bouton__libelle {
@@ -74,7 +76,7 @@ img {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: var(--encre);
+  color: var(--noir);
   text-decoration: none;
 }
 

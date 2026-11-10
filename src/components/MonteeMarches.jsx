@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Header from './Header.jsx'
 import './MonteeMarches.css'
 
 const FRAMES = 60
@@ -12,14 +13,6 @@ const ZOOM = [0.87, 0.98]
 
 const borne = (v) => Math.min(1, Math.max(0, v))
 const plage = (p, [a, b]) => borne((p - a) / (b - a))
-
-function Lettres({ texte, debut }) {
-  return [...texte].map((lettre, i) => (
-    <span className="montee__lettre" style={{ '--i': i, '--debut': `${debut}s` }} key={i} aria-hidden="true">
-      {lettre === ' ' ? ' ' : lettre}
-    </span>
-  ))
-}
 
 export default function MonteeMarches() {
   const section = useRef(null)
@@ -64,6 +57,7 @@ export default function MonteeMarches() {
       const p = progression()
       dessiner(Math.round(borne(p / FIN_MONTEE) * (FRAMES - 1)))
       el.style.setProperty('--p', p.toFixed(4))
+      el.toggleAttribute('data-defile', window.scrollY > 4)
       el.style.setProperty('--titre', (1 - borne(p / 0.12)).toFixed(3))
       el.style.setProperty('--noir', plage(p, NOIR).toFixed(3))
       el.style.setProperty('--cercle', plage(p, CERCLE).toFixed(3))
@@ -119,22 +113,12 @@ export default function MonteeMarches() {
   }
 
   return (
-    <section className="montee" ref={section} aria-labelledby="montee-titre">
+    <section className="montee" ref={section} aria-label="Montée des marches">
       <div className="montee__scene">
         <canvas className="montee__canvas" ref={canvas} aria-hidden="true" />
         <div className="montee__vignette" aria-hidden="true" />
 
         <div className="montee__accroche">
-          <p className="montee__surtitre">Festival de Cannes × Vestiaire Collective</p>
-          <h1 className="montee__titre" id="montee-titre" aria-label="Le tapis rouge s’ouvre à tous.">
-            <span className="montee__ligne">
-              <Lettres texte="Le tapis rouge" debut={0.5} />
-            </span>
-            <span className="montee__ligne montee__ligne--2">
-              <Lettres texte="S’ouvre" debut={1.1} />
-              <em className="montee__serif" aria-hidden="true">à tous.</em>
-            </span>
-          </h1>
           <p className="montee__indice">
             <span>Faites défiler pour monter les marches</span>
             <span className="montee__trait" aria-hidden="true" />
@@ -142,6 +126,8 @@ export default function MonteeMarches() {
         </div>
 
         <div className="montee__noir" aria-hidden="true" />
+
+        <Header superpose />
 
         <div className="montee__salle">
           <div className="salle__plan">

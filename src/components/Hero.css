@@ -19,7 +19,7 @@
   display: block;
   font-family: var(--police-titre);
   font-weight: 400;
-  font-size: calc(193 * var(--u));
+  font-size: calc(158 * var(--u));
   text-transform: uppercase;
   color: var(--rouge);
   white-space: nowrap;
@@ -40,7 +40,7 @@
 }
 
 .hero__ligne2 em {
-  font-family: var(--police-serif);
+  font-family: var(--police-titre);
   font-style: italic;
   text-transform: none;
   letter-spacing: -0.0017em;
