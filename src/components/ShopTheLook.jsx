@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import photoNoe from '../assets/figma/photo-noe.jpg'
-import pieceCostume from '../assets/figma/piece-costume.png'
+import photoNoe from '../assets/figma/photo-noe.webp'
+import pieceCostume from '../assets/figma/piece-costume.webp'
 import './ShopTheLook.css'
 
 const pieces = [

@@ -46,6 +46,18 @@
   transform: rotate(-3deg);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .manifeste__barre s::after {
+    transform: rotate(-3deg) scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
+  }
+
+  .manifeste__titre.est-visible .manifeste__barre s::after {
+    transform: rotate(-3deg) scaleX(1);
+  }
+}
+
 .manifeste__annotation {
   display: inline-block;
   margin-bottom: 0.08em;
@@ -124,7 +136,7 @@
   }
 
   .manifeste__engagements {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 

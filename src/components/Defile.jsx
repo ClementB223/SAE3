@@ -1,4 +1,4 @@
-import photoDefile from '../assets/figma/photo-defile.jpg'
+import photoDefile from '../assets/figma/photo-defile.webp'
 import './Defile.css'
 
 export default function Defile() {

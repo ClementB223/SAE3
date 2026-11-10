@@ -32,6 +32,7 @@ export default function MonteeMarches() {
     let actuelle = -1
     let frame = 0
     let enLecture = false
+    let chargee = false
 
     const dessiner = (i, force = false) => {
       let k = i
@@ -63,6 +64,11 @@ export default function MonteeMarches() {
       el.style.setProperty('--zoom', (1 + borne(p / FIN_MONTEE) * 0.06).toFixed(4))
       const v = video.current
       if (!v) return
+      if (p > NOIR[0] - 0.2 && !chargee) {
+        chargee = true
+        v.preload = 'auto'
+        v.load()
+      }
       if (p >= CERCLE[0] + 0.02 && !enLecture) {
         enLecture = true
         v.play().catch(() => {})
@@ -135,7 +141,7 @@ export default function MonteeMarches() {
                 src={`${base}video/wild-summon.mp4`}
                 muted
                 playsInline
-                preload="auto"
+                preload="none"
                 aria-label="Bande-annonce de Wild Summon, sélection Palme d’or du court métrage"
               />
             </div>

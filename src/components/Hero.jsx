@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import photoGroupe from '../assets/figma/photo-groupe.jpg'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import photoGroupe from '../assets/figma/photo-groupe.webp'
 import './Hero.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -14,6 +17,7 @@ export default function Hero() {
         duration: 2,
         stagger: 0.2,
         ease: 'power3.out',
+        scrollTrigger: { trigger: heroRef.current, start: 'top 75%', once: true },
       })
     }, heroRef)
 

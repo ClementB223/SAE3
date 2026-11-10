@@ -1,4 +1,4 @@
-import photoCloture from '../assets/figma/photo-defile.jpg'
+import photoCloture from '../assets/figma/photo-defile.webp'
 import logoBlanc from '../assets/logo/logo-collab.png'
 import './Footer.css'
 

@@ -68,6 +68,20 @@ img {
   background: var(--rouge-fonce);
 }
 
+@media (max-width: 480px) {
+  .bouton {
+    max-width: 100%;
+    height: auto;
+    min-height: 56px;
+    padding: 14px 22px;
+    white-space: normal;
+  }
+
+  .bouton__libelle {
+    letter-spacing: 0.1em;
+  }
+}
+
 .bouton__libelle {
   letter-spacing: 0.14em;
   text-transform: uppercase;

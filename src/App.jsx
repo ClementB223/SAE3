@@ -8,8 +8,11 @@ import Manifeste from './components/Manifeste.jsx'
 import ShopTheLook from './components/ShopTheLook.jsx'
 import Pieces from './components/Pieces.jsx'
 import Footer from './components/Footer.jsx'
+import { useApparitions } from './apparitions.js'
 
 function App() {
+  useApparitions()
+
   return (
     <>
       <MonteeMarches />

@@ -208,8 +208,12 @@
   }
 
   .shop__corps {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 48px;
+  }
+
+  .shop__titre {
+    white-space: normal;
   }
 
   .shop__titre1 {

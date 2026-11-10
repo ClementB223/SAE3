@@ -1,7 +1,7 @@
-import pieceRobe from '../assets/figma/piece-robe.png'
-import pieceCostume from '../assets/figma/piece-costume.png'
-import piecePlumes from '../assets/figma/piece-plumes.png'
-import pieceCombinaison from '../assets/figma/piece-combinaison.png'
+import pieceRobe from '../assets/figma/piece-robe.webp'
+import pieceCostume from '../assets/figma/piece-costume.webp'
+import piecePlumes from '../assets/figma/piece-plumes.webp'
+import pieceCombinaison from '../assets/figma/piece-combinaison.webp'
 import './Pieces.css'
 
 const pieces = [

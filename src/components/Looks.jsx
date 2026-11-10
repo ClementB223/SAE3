@@ -1,7 +1,7 @@
-import photoElodie from '../assets/figma/photo-elodie.jpg'
-import photoNoe from '../assets/figma/photo-noe.jpg'
-import photoSora from '../assets/figma/photo-sora.jpg'
-import photoAbde from '../assets/figma/photo-abde.jpg'
+import photoElodie from '../assets/figma/photo-elodie.webp'
+import photoNoe from '../assets/figma/photo-noe.webp'
+import photoSora from '../assets/figma/photo-sora.webp'
+import photoAbde from '../assets/figma/photo-abde.webp'
 import './Looks.css'
 
 const looks = [
