@@ -1,0 +1,106 @@
+.header {
+  background: var(--creme);
+}
+
+.header__barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px var(--marge);
+}
+
+.header__logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header__logo-cannes,
+.header__logo-vestiaire {
+  display: block;
+  object-fit: contain;
+}
+
+.header__croix {
+  font-family: var(--police-serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--rouge);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.header__lien {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--police-texte);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.header__lien::after {
+  content: '';
+  height: 2px;
+  background: transparent;
+  transition: background-color 0.2s;
+}
+
+.header__lien[aria-current='page']::after,
+.header__lien:hover::after {
+  background: var(--rouge);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.header__recherche,
+.header__selection {
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: none;
+  color: var(--encre);
+  cursor: pointer;
+}
+
+.header__recherche {
+  padding: 0;
+}
+
+.header__recherche img,
+.header__selection img {
+  display: block;
+}
+
+.header__selection {
+  gap: 8px;
+  padding: 12px 6px;
+  font-family: var(--police-texte);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+  .header__nav {
+    display: none;
+  }
+}
