@@ -5,6 +5,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 calc(40 * var(--u)) calc(64 * var(--u));
+  margin-top: 3rem;
   overflow: hidden;
 }
 
