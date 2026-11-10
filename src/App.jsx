@@ -1,11 +1,11 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
-import HeroTapisRouge from './components/HeroTapisRouge.jsx'
+import MonteeMarches from './components/MonteeMarches.jsx'
 
 function App() {
   return (
     <>
-      <HeroTapisRouge />
+      <MonteeMarches />
       <Header />
       <main>
         <Hero />
