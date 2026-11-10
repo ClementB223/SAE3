@@ -1,0 +1,134 @@
+.manifeste {
+  background: var(--rouge);
+  color: var(--blanc);
+}
+
+.manifeste__contenu {
+  display: flex;
+  flex-direction: column;
+  gap: calc(56 * var(--u));
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(72 * var(--u)) calc(40 * var(--u)) calc(96 * var(--u));
+}
+
+.manifeste__titre {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: calc(128 * var(--u));
+  line-height: 0.92;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.manifeste__ligne--2 {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(40 * var(--u));
+}
+
+.manifeste__barre s {
+  position: relative;
+  text-decoration: none;
+}
+
+.manifeste__barre s::after {
+  content: '';
+  position: absolute;
+  left: -0.15em;
+  right: -0.05em;
+  top: 46%;
+  height: calc(16 * var(--u));
+  background: var(--noir);
+  transform: rotate(-3deg);
+}
+
+.manifeste__annotation {
+  display: inline-block;
+  margin-bottom: 0.08em;
+  font-size: calc(68 * var(--u));
+  line-height: 1;
+  text-transform: none;
+  transform: rotate(-4deg);
+  transform-origin: left bottom;
+}
+
+.manifeste__engagements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 0;
+  padding: 32px 0 0;
+  list-style: none;
+}
+
+.manifeste__engagement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--blanc);
+}
+
+.manifeste__engagement:nth-child(2) {
+  margin-top: 64px;
+}
+
+.manifeste__engagement:nth-child(3) {
+  margin-top: 128px;
+}
+
+.manifeste__intitule {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.02;
+}
+
+.manifeste__texte {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .manifeste__contenu {
+    gap: 40px;
+    padding: 64px var(--marge) 72px;
+  }
+
+  .manifeste__titre {
+    font-size: 12vw;
+    white-space: normal;
+  }
+
+  .manifeste__ligne--2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .manifeste__barre s::after {
+    height: 6px;
+  }
+
+  .manifeste__annotation {
+    font-size: 9vw;
+  }
+
+  .manifeste__engagements {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .manifeste__engagement:nth-child(n) {
+    margin-top: 0;
+  }
+}

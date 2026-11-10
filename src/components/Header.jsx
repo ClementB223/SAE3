@@ -1,4 +1,4 @@
-import logoCollab from '../assets/logo/logo-collab.png'
+import logoNoir from '../assets/logo/logo-collab-noir.png'
 import iconeRecherche from '../assets/figma/recherche.svg'
 import iconeCoeur from '../assets/figma/coeur.svg'
 import './Header.css'
@@ -10,12 +10,12 @@ const liens = [
   { libelle: 'Notre engagement', href: '#engagement' },
 ]
 
-export default function Header({ actif = 'Accueil', selection = 2, superpose = false }) {
+export default function Header({ actif = 'Accueil', selection = 2 }) {
   return (
-    <header className={superpose ? 'header header--superpose' : 'header'}>
+    <header className="header">
       <div className="header__barre">
         <a className="header__logos" href="#accueil" aria-label="Festival de Cannes × Vestiaire Collective, accueil">
-          <img className="header__logo" src={logoCollab} alt="" width="48" height="42" />
+          <img className="header__logo" src={logoNoir} alt="" width="48" height="42" />
         </a>
 
         <nav className="header__nav" aria-label="Navigation principale">

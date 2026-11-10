@@ -1,0 +1,44 @@
+.bande {
+  height: 58px;
+  overflow: hidden;
+  background: var(--rouge);
+  color: var(--blanc);
+}
+
+.bande__texte {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.bande__piste {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: bande-defile 40s linear infinite;
+}
+
+.bande__phrase {
+  padding-left: 0.3em;
+  font-family: var(--police-titre);
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.bande__phrase em {
+  text-transform: none;
+}
+
+@keyframes bande-defile {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bande__piste {
+    animation: none;
+  }
+}

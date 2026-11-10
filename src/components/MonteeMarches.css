@@ -1,12 +1,12 @@
 .montee {
   --p: 0;
   --titre: 1;
-  --noir: 0;
+  --fondu: 0;
   --cercle: 0;
   --approche: 0;
   --zoom: 1;
   position: relative;
-  height: 700vh;
+  height: 850vh;
   background: #050404;
   color: var(--blanc);
 }
@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(110px, 15vh, 150px) 16px 36px;
+  padding: clamp(40px, 8vh, 96px) 16px 36px;
   text-align: center;
   opacity: var(--titre);
   transform: translateY(calc((1 - var(--titre)) * -60px));
@@ -85,22 +85,12 @@
   animation: montee-descente 1.8s ease-in-out 2.8s infinite;
 }
 
-.montee .header--superpose {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.montee[data-defile] .header--superpose {
-  opacity: 0;
-  transform: translateY(-100%);
-  pointer-events: none;
-}
-
 .montee__noir {
   position: absolute;
   inset: 0;
   z-index: 2;
   background: var(--noir);
-  opacity: var(--noir);
+  opacity: var(--fondu);
   pointer-events: none;
 }
 

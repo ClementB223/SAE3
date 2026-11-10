@@ -1,0 +1,233 @@
+.shop {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(120 * var(--u)) calc(40 * var(--u)) calc(100 * var(--u));
+}
+
+.shop__corps {
+  display: grid;
+  grid-template-columns: calc(668 * var(--u)) calc(553 * var(--u));
+  justify-content: space-between;
+  margin-top: 33px;
+}
+
+.shop__visuel {
+  margin: 0;
+}
+
+.shop__cadre {
+  position: relative;
+}
+
+.shop__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 668 / 835;
+  object-fit: cover;
+}
+
+.shop__legende {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.point {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.point__pastille {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--blanc);
+  border-radius: 50%;
+  background: var(--rouge);
+  font-family: var(--police-titre);
+  font-size: 18px;
+  color: var(--blanc);
+  transition: transform 0.2s;
+}
+
+.point:hover .point__pastille {
+  transform: scale(1.1);
+}
+
+.point--actif .point__pastille {
+  background: var(--blanc);
+  color: var(--rouge);
+}
+
+.point__etiquette {
+  padding: 6px 10px;
+  background: var(--blanc);
+  font-family: var(--police-texte);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--noir);
+}
+
+.shop__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.shop__titre {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.shop__titre1 {
+  font-size: calc(66 * var(--u));
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.shop__titre2 {
+  font-size: calc(48 * var(--u));
+  line-height: 1.05;
+  color: var(--rouge);
+}
+
+.shop__chapeau {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--gris);
+}
+
+.shop__liste {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--noir);
+  list-style: none;
+}
+
+.ligne {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--noir);
+  transition: background-color 0.2s;
+}
+
+.ligne--active {
+  background: var(--sable);
+}
+
+.ligne__numero {
+  width: 30px;
+  font-family: var(--police-titre);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.ligne--active .ligne__numero {
+  color: var(--rouge);
+}
+
+.ligne__vignette {
+  flex-shrink: 0;
+  width: 76px;
+  height: 92px;
+  background: var(--sable);
+}
+
+.ligne--active .ligne__vignette {
+  background: var(--trait);
+}
+
+.ligne__vignette img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ligne__textes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ligne__marque {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ligne__nom {
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.ligne__details {
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.ligne__prix {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.ligne__montant {
+  font-family: var(--police-titre);
+  font-size: 24px;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .shop {
+    padding: 72px var(--marge);
+  }
+
+  .shop__corps {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .shop__titre1 {
+    font-size: 13vw;
+  }
+
+  .shop__titre2 {
+    font-size: 8vw;
+  }
+
+  .ligne {
+    flex-wrap: wrap;
+  }
+
+  .ligne__prix {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

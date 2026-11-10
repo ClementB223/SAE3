@@ -6,11 +6,16 @@
   --rouge: #b5121b;
   --rouge-fonce: #8e0e15;
   --gris: #57524a;
+  --sable: #e6ded0;
+  --trait: #dcd2c0;
+  --pierre: #cfc8ba;
+  --rouge-clair: #e2414c;
 
   --police-titre: 'Albra', 'Albra Regular', Georgia, 'Times New Roman', serif;
   --police-texte: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --marge: 40px;
+  --u: min(1px, calc(100vw / 1440));
 
   font-family: var(--police-texte);
   color: var(--noir);
@@ -91,7 +96,45 @@ img {
   color: var(--rouge);
 }
 
+.lien--clair {
+  color: var(--blanc);
+}
+
+.lien--clair:hover {
+  color: var(--or);
+}
+
+.filet {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 18px;
+  border-top: 1px solid var(--noir);
+}
+
+.filet--clair {
+  border-color: var(--blanc);
+}
+
+.rubrique {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--rouge);
+}
+
+.rubrique--encre {
+  color: var(--noir);
+}
+
+.rubrique--clair {
+  color: var(--blanc);
+}
+
 :focus-visible {
   outline: 2px solid var(--rouge);
   outline-offset: 3px;
+}
+
+[id] {
+  scroll-margin-top: 90px;
 }

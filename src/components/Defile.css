@@ -1,0 +1,85 @@
+.defile {
+  display: grid;
+  grid-template-columns: calc(823 * var(--u)) 1fr;
+  gap: calc(140 * var(--u));
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(120 * var(--u)) calc(40 * var(--u)) calc(140 * var(--u)) 0;
+}
+
+.defile__visuel {
+  margin: 0;
+}
+
+.defile__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 823 / 463;
+  object-fit: cover;
+}
+
+.defile__legende {
+  margin: 14px 0 0 calc(40 * var(--u));
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.defile__texte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  max-width: 437px;
+}
+
+.defile__titre {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  line-height: 0.96;
+}
+
+.defile__titre1 {
+  font-size: clamp(34px, calc(52 * var(--u)), 52px);
+  text-transform: uppercase;
+  color: var(--noir);
+}
+
+.defile__titre2 {
+  font-size: clamp(36px, calc(54 * var(--u)), 54px);
+  color: var(--rouge);
+}
+
+.defile__para {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.defile__para--gris {
+  color: var(--gris);
+}
+
+.defile__para--lettrine::first-letter {
+  float: left;
+  margin: 0.04em 0.08em 0 0;
+  font-family: var(--police-titre);
+  font-size: 58px;
+  line-height: 0.82;
+  color: var(--rouge);
+}
+
+@media (max-width: 900px) {
+  .defile {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 72px var(--marge);
+  }
+
+  .defile__legende {
+    margin-left: 0;
+  }
+}
