@@ -1,9 +1,27 @@
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 import photoGroupe from '../assets/figma/photo-groupe.jpg'
 import './Hero.css'
 
 export default function Hero() {
+  const heroRef = useRef(null)
+
+  useEffect(() => {
+    const context = gsap.context(() => {
+      gsap.from('.hero__ligne1, .hero__ligne2', {
+        y: 120,
+        opacity: 0,
+        duration: 2,
+        stagger: 0.2,
+        ease: 'power3.out',
+      })
+    }, heroRef)
+
+    return () => context.revert()
+  }, [])
+
   return (
-    <section className="hero" id="accueil" aria-labelledby="hero-titre">
+    <section ref={heroRef} className="hero" id="accueil" aria-labelledby="hero-titre">
       <h1 className="hero__titre" id="hero-titre">
         <span className="hero__ligne1">Le tapis rouge </span>
         <span className="hero__ligne2">
