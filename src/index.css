@@ -11,13 +11,14 @@
   --pierre: #cfc8ba;
   --rouge-clair: #e2414c;
 
-  --police-titre: 'Albra', 'Albra Regular', Georgia, 'Times New Roman', serif;
-  --police-texte: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --police-titre: 'Albra', 'Playfair Display', Georgia, serif;
+  --police-texte: 'Helvetica Now Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   --marge: 40px;
   --u: min(1px, calc(100vw / 1440));
 
   font-family: var(--police-texte);
+  font-variant-numeric: lining-nums;
   color: var(--noir);
   background: var(--blanc);
   -webkit-font-smoothing: antialiased;
@@ -55,6 +56,7 @@ img {
   background: var(--rouge);
   color: var(--blanc);
   font-family: var(--police-texte);
+  font-variant-numeric: lining-nums;
   font-weight: 700;
   font-size: 14px;
   white-space: nowrap;
@@ -76,6 +78,7 @@ img {
   flex-direction: column;
   gap: 4px;
   font-family: var(--police-texte);
+  font-variant-numeric: lining-nums;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.12em;
