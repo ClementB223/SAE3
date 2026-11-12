@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import { formatPrix, participants, piecesDuLook, prixDes } from '../donnees.js'
+import { participants } from '../donnees.js'
 import './Looks.css'
 
 function Look({ personne }) {
-  const nombre = piecesDuLook(personne.slug).length
   return (
     <Link className="look" to={`/le-casting/${personne.slug}`}>
       <div className="look__visuel">
@@ -30,17 +29,14 @@ function Look({ personne }) {
           {personne.numero}
         </span>
       </div>
-      <div className="look__infos">
-        {!personne.look.affiche && (
+      {!personne.look.affiche && (
+        <div className="look__infos">
           <span className="look__nom">
             {personne.nom}
             <span className="look__metier">{personne.metier}</span>
           </span>
-        )}
-        <span className="look__resume">
-          {nombre} pièces · dès {formatPrix(prixDes(personne.slug))}
-        </span>
-      </div>
+        </div>
+      )}
       <h3 className="look__titre">{personne.look.titre}</h3>
       <p className="look__texte">{personne.look.resume}</p>
       <span className="lien">Découvrir son histoire et son look →</span>
