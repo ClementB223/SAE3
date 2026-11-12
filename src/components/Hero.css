@@ -77,6 +77,8 @@
   width: calc(1014 * var(--u));
   height: calc(571 * var(--u));
   object-fit: cover;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 90%, transparent 100%);
 }
 
 .hero__bas {
@@ -104,6 +106,11 @@
   .hero__ligne2 {
     font-size: 13vw;
     white-space: normal;
+  }
+
+  .hero__ligne1 {
+    margin-bottom: 14px;
+    line-height: 0.95;
   }
 
   .hero__ligne2 {

@@ -23,6 +23,10 @@ import derbiesNoirs from './assets/pieces/derbies-noirs.webp'
 import essayage from './assets/scenes/essayage.webp'
 import coulisses from './assets/scenes/coulisses.webp'
 import popUp from './assets/scenes/pop-up.webp'
+import banniere from './assets/affiches/banniere.webp'
+import afficheWinnie from './assets/affiches/affiche-winnie.webp'
+import afficheAbde from './assets/affiches/affiche-abde.webp'
+import affichePeter from './assets/affiches/affiche-peter.webp'
 
 export const images = {
   photoElodie,
@@ -50,4 +54,8 @@ export const images = {
   essayage,
   coulisses,
   popUp,
+  banniere,
+  afficheWinnie,
+  afficheAbde,
+  affichePeter,
 }

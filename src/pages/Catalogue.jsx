@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { participants, pieces } from '../donnees.js'
 import PieceCarte from '../components/PieceCarte.jsx'
 import './pages.css'
@@ -40,6 +40,12 @@ export default function Catalogue() {
   const [coupe, setCoupe] = useState('')
   const [besoins, setBesoins] = useState([])
   const [disponibles, setDisponibles] = useState(false)
+  const champ = useRef(null)
+  const { hash, key } = useLocation()
+
+  useEffect(() => {
+    if (hash === '#recherche') champ.current?.focus({ preventScroll: true })
+  }, [hash, key])
 
   const resultats = useMemo(() => {
     const q = normaliser(recherche.trim())
@@ -83,7 +89,7 @@ export default function Catalogue() {
           </h1>
         </div>
         <p className="entete-page__chapeau">
-          Les {pieces.length} pièces portées sur les marches, toutes de seconde main et toutes uniques. Filtrez par coupe ou par
+          Les {pieces.length} pièces portées sur les marches, en tailles 38 à 50, toutes de seconde main et toutes uniques. Filtrez par coupe ou par
           besoin d’accessibilité : 100 % des bénéfices sont reversés à l’inclusion dans l’audiovisuel.
         </p>
       </header>
@@ -96,6 +102,7 @@ export default function Catalogue() {
             </label>
             <input
               id="recherche"
+              ref={champ}
               className="champ"
               type="search"
               placeholder="Marque, pièce, couleur…"

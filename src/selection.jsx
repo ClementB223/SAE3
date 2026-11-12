@@ -7,7 +7,7 @@ const lire = () => {
   try {
     const brut = window.localStorage.getItem(CLE)
     const liste = brut ? JSON.parse(brut) : null
-    return Array.isArray(liste) ? liste : ['costume-deux-pieces-ivoire', 'lavalliere-soie-ivoire']
+    return Array.isArray(liste) ? liste : []
   } catch {
     return []
   }

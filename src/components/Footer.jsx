@@ -8,7 +8,7 @@ const colonnes = [
     titre: 'Le projet',
     liens: [
       ['Le Premier Rôle', '/le-projet'],
-      ['Les trois barrières', '/le-projet#barrieres'],
+      ['Ce qu’on fait tomber', '/le-projet#barrieres'],
       ['Le casting', '/le-casting'],
       ['Le défilé d’ouverture', '/le-projet#deroule'],
     ],

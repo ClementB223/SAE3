@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import photoGroupe from '../assets/figma/photo-groupe.webp'
+import banniere from '../assets/affiches/banniere.webp'
 import './Hero.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -42,8 +42,8 @@ export default function Hero() {
         </p>
         <img
           className="hero__photo"
-          src={photoGroupe}
-          alt="Élodie, Noé, Sora et Abde posent sur les marches rouges du Palais."
+          src={banniere}
+          alt="Une personne en fauteuil roulant monte les marches du Palais par une rampe, sous les objectifs des photographes."
           width="1014"
           height="571"
         />
