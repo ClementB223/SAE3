@@ -313,11 +313,11 @@ export default function MonteeMarches() {
               <video
                 ref={video}
                 className="salle__video"
-                src={`${base}video/wild-summon.mp4`}
+                src={`${base}video/presentation-event.mp4`}
                 muted
                 playsInline
                 preload="none"
-                aria-label="Bande-annonce de Wild Summon, sélection Palme d’or du court métrage"
+                aria-label="Vidéo de présentation de la collaboration Le Premier Rôle"
               />
             </div>
           </div>
