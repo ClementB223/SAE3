@@ -89,7 +89,7 @@ export default function Catalogue() {
           </h1>
         </div>
         <p className="entete-page__chapeau">
-          Les {pieces.length} pièces portées sur les marches, en tailles 38 à 50, toutes de seconde main et toutes uniques. Filtrez par coupe ou par
+          {pieces.length} pièces de seconde main, du 36 au 52 : celles portées sur les marches et toute la vente solidaire. Filtrez par coupe ou par
           besoin d’accessibilité : 100 % des bénéfices sont reversés à l’inclusion dans l’audiovisuel.
         </p>
       </header>

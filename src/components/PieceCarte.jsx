@@ -30,9 +30,7 @@ export default function PieceCarte({ piece, titre = 'h3' }) {
         <div className="piece__vignette">
           {piece.image ? (
             <img className="piece__image" src={piece.image} alt="" loading="lazy" />
-          ) : (
-            <span className="piece__vide">Visuel à venir</span>
-          )}
+          ) : null}
         </div>
 
         <div className="piece__textes">

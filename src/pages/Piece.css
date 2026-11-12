@@ -1,147 +1,120 @@
-.fiche {
+.produit {
   display: grid;
-  grid-template-columns: minmax(0, 764fr) minmax(0, 532fr);
-  gap: 48px calc(64 * var(--u));
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px calc(96 * var(--u));
   align-items: start;
-  padding: calc(24 * var(--u)) 0 calc(110 * var(--u));
+  padding: calc(16 * var(--u)) 0 calc(110 * var(--u));
 }
 
-.fiche__galerie {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-}
-
-.fiche__vignette {
+.produit__visuel {
+  position: sticky;
+  top: 100px;
   display: grid;
   place-items: center;
   aspect-ratio: 4 / 5;
-  padding: 8%;
+  padding: 10%;
   background: var(--or-voile);
 }
 
-.fiche__vignette img {
+.produit__visuel img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.fiche__vignette--vendue img {
+.produit__visuel--vendu img {
   opacity: 0.4;
 }
 
-.fiche__porte {
-  margin: 0;
-}
-
-.fiche__porte img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-.fiche__porte figcaption {
-  margin-top: 8px;
+.produit__unique {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 5px 10px;
+  background: var(--blanc);
+  font-weight: 500;
   font-size: 13px;
-  color: var(--noir-doux);
 }
 
-.fiche__infos {
+.produit__infos {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  padding-top: 8px;
 }
 
-.fiche__badge {
-  align-self: flex-start;
-  margin: 0;
-  padding: 6px 10px;
-  background: var(--noir);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--or);
-}
-
-.fiche__marque {
-  margin: 0 0 6px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.fiche__nom {
-  margin: 0;
-  font-family: var(--police-titre);
-  font-weight: 400;
-  font-size: clamp(36px, calc(52 * var(--u)), 52px);
-  line-height: 1;
-}
-
-.fiche__prix-statut {
+.produit__ligne {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
 }
 
-.fiche__prix {
-  margin: 0;
-  font-weight: 600;
-  font-size: 32px;
+.produit__marque {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-del.fiche__prix {
+.produit__nom {
+  margin: 14px 0 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(34px, calc(48 * var(--u)), 48px);
+  line-height: 1.05;
+}
+
+.produit__prix {
+  margin: 14px 0 0;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+del.produit__prix {
   color: var(--noir-doux);
 }
 
-.fiche__caracteristiques {
-  margin: 0;
-  border-top: 1px solid var(--noir);
+.produit__description {
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--noir-doux);
 }
 
-.fiche__caracteristiques div {
+.produit__taille {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--noir);
+  align-items: center;
+  margin-top: 32px;
+  padding: 14px 16px;
+  border: 1px solid var(--noir);
   font-size: 15px;
 }
 
-.fiche__caracteristiques dt {
-  color: var(--noir-doux);
-}
-
-.fiche__caracteristiques dd {
-  margin: 0;
+.produit__taille strong {
   font-weight: 600;
-  text-align: right;
 }
 
-.fiche__actions {
+.produit__actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.fiche__acheter {
+.produit__acheter {
   flex: 1;
   justify-content: center;
-  border: 0;
-  cursor: pointer;
 }
 
-.fiche__acheter:disabled {
+.produit__acheter--off,
+.produit__acheter--off:hover {
   background: var(--noir-doux);
   cursor: not-allowed;
 }
 
-.fiche__favori {
+.produit__coeur {
   display: grid;
+  flex-shrink: 0;
   place-items: center;
   width: 56px;
   height: 56px;
@@ -150,196 +123,117 @@ del.fiche__prix {
   background: var(--blanc);
   color: var(--noir);
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.fiche__favori[aria-pressed='true'] {
+.produit__coeur[aria-pressed='true'] {
   color: var(--rouge);
 }
 
-.fiche__favori svg {
+.produit__coeur svg {
   width: 22px;
   height: 22px;
 }
 
-.fiche__note {
-  margin: -8px 0 0;
+.produit__solidaire {
+  margin: 16px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--rouge);
   font-size: 14px;
-  line-height: 1.5;
+}
+
+.produit__details {
+  margin-top: 36px;
+  border-top: 1px solid var(--noir);
+}
+
+.produit__details details {
+  border-bottom: 1px solid var(--noir);
+}
+
+.produit__details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+}
+
+.produit__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.produit__details summary::after {
+  content: '+';
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.produit__details details[open] summary::after {
+  content: '−';
+}
+
+.produit__details details > :not(summary) {
+  margin: 0 0 20px;
+}
+
+.produit__liste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+}
+
+.produit__liste dt {
+  font-size: 13px;
   color: var(--noir-doux);
 }
 
-.fiche__note a {
-  color: var(--noir);
+.produit__liste dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-.fiche__note a:hover {
-  color: var(--orange);
-}
-
-.fiche__arguments {
+.produit__arguments {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 0;
+  gap: 8px;
   padding: 0;
   list-style: none;
-}
-
-.fiche__arguments li {
-  padding-left: 22px;
-  position: relative;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
-.fiche__arguments li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 10px;
-  height: 10px;
-  background: var(--rouge);
-}
-
-.fiche__personne {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-top: 20px;
-  border-top: 1px solid var(--noir);
+.produit__porte {
+  margin-top: 28px;
+  font-size: 15px;
   color: var(--noir);
   text-decoration: none;
 }
 
-.fiche__personne img {
-  flex-shrink: 0;
-  width: 96px;
-  height: 120px;
-  object-fit: cover;
+.produit__porte strong {
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
 }
 
-.fiche__personne > span {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-}
-
-.fiche__personne .rubrique-petite {
-  margin: 0;
-}
-
-.fiche__personne-nom {
-  font-family: var(--police-titre);
-  font-size: 28px;
-}
-
-.fiche__personne-metier {
-  font-size: 14px;
-  color: var(--noir-doux);
-}
-
-.fiche__personne:hover .lien {
+.produit__porte:hover {
   color: var(--orange);
 }
 
-.achat {
-  width: min(600px, calc(100vw - 32px));
-  padding: 0;
-  border: 0;
-  background: var(--blanc);
-  color: var(--noir);
-}
-
-.achat::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.achat__fenetre {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 40px;
-}
-
-.achat__haut {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.achat__haut .rubrique-petite {
-  margin: 0;
-}
-
-.achat__fermer {
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 30px;
-  line-height: 1;
-  color: var(--noir);
-  cursor: pointer;
-}
-
-.achat__titre {
-  margin: 0;
-  font-family: var(--police-titre);
-  font-weight: 400;
-  font-size: 34px;
-  line-height: 1.1;
-}
-
-.achat__recap {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px;
-  background: var(--or-voile);
-}
-
-.achat__vignette {
-  flex-shrink: 0;
-  width: 76px;
-  height: 92px;
-}
-
-.achat__vignette img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.achat__textes {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.achat__textes .fiche__marque {
-  margin: 0;
-  font-size: 12px;
-}
-
-.achat__nom {
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.achat__prix {
-  font-weight: 600;
-  font-size: 22px;
-}
-
 @media (max-width: 900px) {
-  .fiche {
+  .produit {
     grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 
-  .achat__fenetre {
-    padding: 24px;
+  .produit__visuel {
+    position: relative;
+    top: 0;
   }
 }

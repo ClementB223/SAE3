@@ -22,7 +22,6 @@ export default function MonteeMarches() {
   const section = useRef(null)
   const canvas = useRef(null)
   const video = useRef(null)
-  const passer = useRef(() => {})
   const [son, setSon] = useState(false)
   const [etat, setEtat] = useState('repos')
 
@@ -161,9 +160,6 @@ export default function MonteeMarches() {
       animer(0, DUREE_RETOUR, () => changerMode('repos'))
     }
 
-    passer.current = () => {
-      if (mode === 'lecture') terminer()
-    }
 
     const surRoue = (e) => {
       const maintenant = performance.now()
@@ -329,10 +325,6 @@ export default function MonteeMarches() {
             {son ? 'Couper le son' : 'Activer le son'}
           </button>
         </div>
-
-        <button type="button" className="montee__passer" onClick={() => passer.current()} tabIndex={etat === 'lecture' ? 0 : -1}>
-          Passer l’intro
-        </button>
       </div>
     </section>
   )
