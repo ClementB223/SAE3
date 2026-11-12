@@ -18,7 +18,7 @@ export function useApparitions(cle) {
         gsap.from(lignes, {
           yPercent: 60,
           opacity: 0,
-          duration: 1.1,
+          duration: 0.9,
           stagger: 0.12,
           ease: 'power3.out',
           scrollTrigger: { trigger: titre, start: 'top 88%', once: true },
@@ -32,10 +32,10 @@ export function useApparitions(cle) {
           {
             clipPath: 'inset(0% 0% 0% 0%)',
             scale: 1,
-            duration: 1.4,
+            duration: 1,
             ease: 'power4.out',
             clearProps: 'clipPath,transform',
-            scrollTrigger: { trigger: photo, start: 'top 90%', once: true },
+            scrollTrigger: { trigger: photo, start: 'top 96%', once: true },
           },
         )
       })
@@ -44,8 +44,8 @@ export function useApparitions(cle) {
         gsap.from(numero, {
           y: 50,
           opacity: 0,
-          duration: 1,
-          delay: 0.35,
+          duration: 0.8,
+          delay: 0.2,
           ease: 'power3.out',
           scrollTrigger: { trigger: numero, start: 'top 92%', once: true },
         })
@@ -56,7 +56,7 @@ export function useApparitions(cle) {
     const barre = titreManifeste
       ? ScrollTrigger.create({
           trigger: titreManifeste,
-          start: 'top 70%',
+          start: 'top 85%',
           once: true,
           onEnter: () => titreManifeste.classList.add('est-visible'),
         })
