@@ -22,9 +22,6 @@
   object-fit: contain;
 }
 
-.produit__visuel--vendu img {
-  opacity: 0.4;
-}
 
 
 .produit__infos {
@@ -55,9 +52,6 @@
   font-size: 22px;
 }
 
-del.produit__prix {
-  color: var(--noir-doux);
-}
 
 .produit__description {
   margin: 28px 0 0;
@@ -97,11 +91,6 @@ del.produit__prix {
   text-align: center;
 }
 
-.produit__acheter--off,
-.produit__acheter--off:hover {
-  background: var(--noir-doux);
-  cursor: not-allowed;
-}
 
 .produit__coeur {
   display: grid;

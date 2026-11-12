@@ -29,6 +29,13 @@ const colonnes = [
       ['La conciergerie', '/engagement#conciergerie'],
     ],
   },
+  {
+    titre: 'Partenaires',
+    liens: [
+      ['Festival de Cannes', 'https://www.festival-cannes.com/'],
+      ['Vestiaire Collective', 'https://fr.vestiairecollective.com/'],
+    ],
+  },
 ]
 
 export default function Footer() {
@@ -56,7 +63,13 @@ export default function Footer() {
                 <ul>
                   {c.liens.map(([libelle, href]) => (
                     <li key={libelle}>
-                      <Link to={href}>{libelle}</Link>
+                      {href.startsWith('http') ? (
+                        <a href={href} target="_blank" rel="noreferrer">
+                          {libelle}
+                        </a>
+                      ) : (
+                        <Link to={href}>{libelle}</Link>
+                      )}
                     </li>
                   ))}
                 </ul>

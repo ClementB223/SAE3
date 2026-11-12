@@ -7,9 +7,7 @@ import './pages.css'
 export default function Selection() {
   const { slugs, vider } = useSelection()
   const choisies = slugs.map((s) => parSlug(pieces, s)).filter(Boolean)
-  const achetables = choisies.filter((p) => p.statut !== 'vendue')
-  const total = achetables.reduce((s, p) => s + p.prix, 0)
-  const vendues = choisies.length - achetables.length
+  const total = choisies.reduce((s, p) => s + p.prix, 0)
 
   return (
     <div className="page">
@@ -33,9 +31,8 @@ export default function Selection() {
         {choisies.length > 0 && (
           <div className="selection__resume">
             <p className="entete-page__chapeau" aria-live="polite">
-              Total des pièces encore disponibles : <strong>{formatPrix(total)}</strong>, entièrement reversés aux associations
+              Total de votre sélection : <strong>{formatPrix(total)}</strong>, entièrement reversés aux associations
               partenaires.
-              {vendues > 0 && ` ${vendues} pièce${vendues > 1 ? 's ont' : ' a'} déjà trouvé preneur.`}
             </p>
             <button type="button" className="lien selection__vider" onClick={vider}>
               Vider ma sélection

@@ -126,11 +126,6 @@
   accent-color: var(--rouge);
 }
 
-.case--bascule {
-  padding-top: 20px;
-  border-top: 1px solid var(--noir);
-  font-weight: 600;
-}
 
 .catalogue__reinit {
   align-self: flex-start;

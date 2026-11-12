@@ -23,7 +23,6 @@ export default function Piece() {
   if (!piece) return <Introuvable />
 
   const personne = parSlug(participants, piece.look)
-  const vendue = piece.statut === 'vendue'
   const choisie = contient(piece.slug)
   const autres = (personne ? piecesDuLook(piece.look) : pieces.filter((p) => !p.look)).filter((p) => p !== piece).slice(0, 4)
   const caracteristiques = [
@@ -47,14 +46,14 @@ export default function Piece() {
       </ol>
 
       <article className="produit">
-        <div className={`produit__visuel${vendue ? ' produit__visuel--vendu' : ''}`}>
+        <div className="produit__visuel">
           {piece.image ? <img src={piece.image} alt={`${piece.nom}, ${piece.marque}.`} /> : null}
         </div>
 
         <div className="produit__infos">
           <span className="produit__marque">{piece.marque}</span>
           <h1 className="produit__nom">{piece.nom}</h1>
-          {vendue ? <del className="produit__prix">{formatPrix(piece.prix)}</del> : <p className="produit__prix">{formatPrix(piece.prix)}</p>}
+          <p className="produit__prix">{formatPrix(piece.prix)}</p>
 
           <p className="produit__description">{piece.description}</p>
 
@@ -64,15 +63,9 @@ export default function Piece() {
           </div>
 
           <div className="produit__actions">
-            {vendue ? (
-              <span className="bouton produit__acheter produit__acheter--off">
-                <span className="bouton__libelle">Pièce vendue</span>
-              </span>
-            ) : (
-              <a className="bouton produit__acheter" href={lienVestiaire(piece)} target="_blank" rel="noreferrer">
-                <span className="bouton__libelle">Acheter sur Vestiaire Collective</span>
-              </a>
-            )}
+            <a className="bouton produit__acheter" href={lienVestiaire(piece)} target="_blank" rel="noreferrer">
+              <span className="bouton__libelle">Acheter sur Vestiaire Collective</span>
+            </a>
             <button
               type="button"
               className="produit__coeur"

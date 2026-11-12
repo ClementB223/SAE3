@@ -58,7 +58,6 @@ export default function Catalogue() {
   const [look, setLook] = useState('')
   const [silhouette, setSilhouette] = useState('')
   const [besoins, setBesoins] = useState([])
-  const [disponibles, setDisponibles] = useState(false)
   const champ = useRef(null)
   const { hash, key } = useLocation()
   const [filtresOuverts, setFiltresOuverts] = useState(hash === '#recherche')
@@ -75,20 +74,18 @@ export default function Catalogue() {
       if (silhouette && !vaA(p, silhouette)) return false
       if (look && p.look !== look) return false
       if (besoins.some((b) => !besoinsGroupes[b].some((a) => p.adaptations.includes(a)))) return false
-      if (disponibles && p.statut !== 'disponible') return false
       return true
     })
-  }, [recherche, categorie, look, silhouette, besoins, disponibles])
+  }, [recherche, categorie, look, silhouette, besoins])
 
-  const actifs = recherche || categorie || look || silhouette || besoins.length || disponibles
-  const nbFiltres = [categorie, look, silhouette, disponibles].filter(Boolean).length + besoins.length + (recherche ? 1 : 0)
+  const actifs = recherche || categorie || look || silhouette || besoins.length
+  const nbFiltres = [categorie, look, silhouette].filter(Boolean).length + besoins.length + (recherche ? 1 : 0)
   const reinitialiser = () => {
     setRecherche('')
     setCategorie('')
     setSilhouette('')
     setLook('')
     setBesoins([])
-    setDisponibles(false)
   }
   const basculerBesoin = (b) => setBesoins((l) => (l.includes(b) ? l.filter((x) => x !== b) : [...l, b]))
 
@@ -169,11 +166,6 @@ export default function Catalogue() {
               </label>
             ))}
           </fieldset>
-
-          <label className="case case--bascule">
-            <input type="checkbox" checked={disponibles} onChange={(e) => setDisponibles(e.target.checked)} />
-            <span>Disponibles uniquement</span>
-          </label>
 
           {actifs ? (
             <button type="button" className="lien catalogue__reinit" onClick={reinitialiser}>

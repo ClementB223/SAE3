@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { formatPrix, parSlug, participants, piecesDuLook, prixDes, statuts } from '../donnees.js'
+import { formatPrix, parSlug, participants, piecesDuLook, prixDes } from '../donnees.js'
 import PieceCarte from '../components/PieceCarte.jsx'
 import Introuvable from './Introuvable.jsx'
 import './pages.css'
@@ -78,7 +78,7 @@ export default function Look() {
                       <span className="look-page__marque">{piece.marque}</span>
                       <span className="look-page__piece">{piece.nom}</span>
                       <span className="look-page__details">
-                        {piece.taille} · {statuts[piece.statut]}
+                        {piece.taille}
                       </span>
                     </span>
                     <span className="look-page__prix">{formatPrix(piece.prix)}</span>

@@ -24,10 +24,6 @@
   transform: scale(1.03);
 }
 
-.piece--vendue .piece__image {
-  opacity: 0.4;
-}
-
 .piece__badge {
   position: absolute;
   left: 12px;
