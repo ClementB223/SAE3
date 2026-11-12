@@ -22,7 +22,7 @@ export default function MonteeMarches() {
   const section = useRef(null)
   const canvas = useRef(null)
   const video = useRef(null)
-  const [son, setSon] = useState(false)
+  const [son, setSon] = useState(true)
   const [etat, setEtat] = useState('repos')
 
   useEffect(() => {
@@ -115,10 +115,22 @@ export default function MonteeMarches() {
       }
       if (t >= CERCLE[0] + 0.04 && !enLecture) {
         enLecture = true
-        v.play().catch(() => {})
+        v.muted = false
+        v.play()
+          .then(() => setSon(true))
+          .catch(() => {
+            v.muted = true
+            setSon(false)
+            v.play().catch(() => {})
+          })
       } else if (t < CERCLE[0] && enLecture) {
         enLecture = false
         v.pause()
+      }
+      if (enLecture) {
+        const loin = el.getBoundingClientRect().bottom < window.innerHeight * 0.5
+        if (loin && !v.paused) v.pause()
+        else if (!loin && v.paused && !v.ended) v.play().catch(() => {})
       }
     }
 
@@ -314,7 +326,6 @@ export default function MonteeMarches() {
                 ref={video}
                 className="salle__video"
                 src={`${base}video/presentation-event.mp4`}
-                muted
                 playsInline
                 preload="none"
                 aria-label="Vidéo de présentation de la collaboration Le Premier Rôle"
