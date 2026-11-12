@@ -42,7 +42,6 @@
 
 .hero__ligne2 em {
   font-family: var(--police-titre);
-  font-style: italic;
   text-transform: none;
   letter-spacing: -0.0017em;
 }

@@ -37,7 +37,6 @@
 .footer__citation {
   margin: 0 0 12px;
   font-family: var(--police-titre);
-  font-style: italic;
   font-size: clamp(40px, calc(72 * var(--u)), 72px);
   line-height: 1;
 }
@@ -79,7 +78,6 @@
 .footer__devise {
   margin: 0;
   font-family: var(--police-titre);
-  font-style: italic;
   font-size: 32px;
   line-height: 1.1;
 }

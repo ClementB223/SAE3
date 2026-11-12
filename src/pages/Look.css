@@ -63,7 +63,6 @@
 
 .look-page__look {
   font-size: clamp(30px, calc(40 * var(--u)), 40px);
-  font-style: italic;
   line-height: 1.1;
   color: var(--rouge);
 }

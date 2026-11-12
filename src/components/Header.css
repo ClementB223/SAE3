@@ -238,7 +238,6 @@
   .menu__devise {
     margin: 40px 0 0;
     font-family: var(--police-titre);
-    font-style: italic;
     font-size: 26px;
     color: var(--blanc-doux);
   }

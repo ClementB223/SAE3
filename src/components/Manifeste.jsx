@@ -6,7 +6,7 @@ export default function Manifeste() {
   return (
     <section className="manifeste" id="engagement" aria-labelledby="manifeste-titre">
       <div className="manifeste__contenu">
-        <div className="filet filet--clair">
+        <div className="filet">
           <p className="rubrique rubrique--clair">Pourquoi Le Premier Rôle</p>
         </div>
 

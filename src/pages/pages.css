@@ -96,7 +96,6 @@
 
 .entete-page__accent {
   font-size: clamp(40px, calc(84 * var(--u)), 84px);
-  font-style: italic;
   color: var(--rouge);
 }
 
@@ -204,7 +203,6 @@
 .citation {
   margin: 0;
   font-family: var(--police-titre);
-  font-style: italic;
   font-size: clamp(28px, calc(44 * var(--u)), 44px);
   line-height: 1.15;
 }

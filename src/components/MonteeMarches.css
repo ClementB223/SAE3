@@ -114,7 +114,6 @@
 
 .montee__message-accent {
   font-family: var(--police-titre);
-  font-style: italic;
   font-size: clamp(30px, 4.4vw, 64px);
   line-height: 1.1;
 }
