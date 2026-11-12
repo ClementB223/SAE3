@@ -40,16 +40,13 @@ export default function Look() {
 
       <article className="look-page">
         <div className="look-page__visuel">
-          <img className="look-page__photo anim-photo" src={p.look.photo} alt={`${p.nom} porte le look ${p.look.titre} sur les marches.`} />
-          <span className="look-page__numero anim-numero" aria-hidden="true">
-            {p.numero}
-          </span>
+          <img className="look-page__photo anim-photo" src={p.look.affiche} alt={`Affiche de la campagne, ${p.nom}.`} />
         </div>
 
         <div className="look-page__infos">
           <header>
             <p className="rubrique-petite">
-              {p.metier} · {p.age} ans · {p.ville}
+              {p.numero} · {p.metier}
             </p>
             <h1 className="look-page__titre anim-titre">
               <span className="look-page__nom">{p.nom}</span>
@@ -57,20 +54,10 @@ export default function Look() {
             </h1>
           </header>
 
-          <p className="citation look-page__citation">« {p.citation} »</p>
-          <p className="texte-courant">{p.histoire}</p>
-
-          {p.look.portrait && <img className="look-page__portrait anim-photo" src={p.look.portrait} alt={`${p.prenom} au travail.`} loading="lazy" />}
+          <p className="citation look-page__citation">{p.message}</p>
+          <p className="texte-courant">{p.presentation}</p>
 
           <dl className="look-page__faits">
-            <div>
-              <dt>Sa première émotion de cinéma</dt>
-              <dd>{p.emotion}</dd>
-            </div>
-            <div>
-              <dt>Ce que Cannes représente</dt>
-              <dd>{p.cannes}</dd>
-            </div>
             <div>
               <dt>Le style</dt>
               <dd>{p.look.style}</dd>
@@ -125,7 +112,7 @@ export default function Look() {
           {autres.map((a) => (
             <li key={a.slug}>
               <Link className="autre-look" to={`/le-casting/${a.slug}`}>
-                <img className="autre-look__photo anim-photo" src={a.look.photo} alt="" loading="lazy" />
+                <img className="autre-look__photo anim-photo" src={a.look.affiche} alt="" loading="lazy" />
                 <span className="autre-look__metier">{a.metier}</span>
                 <span className="autre-look__nom">{a.nom}</span>
                 <span className="autre-look__titre">« {a.look.titre} »</span>

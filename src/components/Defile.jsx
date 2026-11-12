@@ -9,7 +9,7 @@ export default function Defile() {
         <img
           className="defile__photo"
           src={photoDefile}
-          alt="Les quatre silhouettes montent les marches sous les flashs des photographes."
+          alt="Des silhouettes montent les marches sous les flashs des photographes."
           width="823"
           height="463"
         />
@@ -19,16 +19,16 @@ export default function Defile() {
       <div className="defile__texte">
         <p className="rubrique">Le défilé d’ouverture</p>
         <h2 className="defile__titre" id="defile-titre">
-          <span className="defile__titre1">Quatre silhouettes</span>
+          <span className="defile__titre1">Trois égéries</span>
           <em className="defile__titre2">Zéro pièce neuve</em>
         </h2>
         <p className="defile__para defile__para--lettrine">
-          Le soir de l’ouverture, quatre professionnels du cinéma montent les marches. Leurs métiers et leurs parcours, trop
-          rarement visibles sur le tapis rouge, sont à découvrir.
+          Le soir de l’ouverture, Winnie Harlow, Abdé Maziane et Peter Dinklage montent les marches. La mode, la scène et la
+          haute couture s’ouvrent à tous.
         </p>
         <p className="defile__para defile__para--gris">
-          Choisies avec eux en seconde main chez Vestiaire Collective, leurs tenues sont ajustées puis vendues au profit
-          d’associations pour l’inclusion dans l’audiovisuel.
+          Leurs tenues sont choisies en seconde main chez Vestiaire Collective, ajustées, puis vendues au profit d’associations
+          pour l’inclusion dans l’audiovisuel.
         </p>
         <Link className="lien" to="/le-projet#deroule">
           Le déroulé du projet →

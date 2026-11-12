@@ -35,7 +35,7 @@
 
 .hero__ligne2 {
   order: 3;
-  margin-top: calc(-12 * var(--u));
+  margin-top: calc(-34 * var(--u));
   line-height: 0.9;
   text-align: right;
 }
@@ -77,8 +77,8 @@
   width: calc(1014 * var(--u));
   height: calc(571 * var(--u));
   object-fit: cover;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 90%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
 }
 
 .hero__bas {

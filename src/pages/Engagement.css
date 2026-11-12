@@ -11,6 +11,8 @@
 
 .engage-une__ligne1,
 .engage-une__ligne2 {
+  position: relative;
+  z-index: 1;
   display: block;
   font-family: var(--police-titre);
   color: var(--rouge);
@@ -31,13 +33,15 @@
   align-self: flex-end;
   width: calc(1014 * var(--u));
   aspect-ratio: 2 / 1;
-  margin-top: calc(28 * var(--u));
+  margin-top: calc(-46 * var(--u));
   object-fit: cover;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
 }
 
 .engage-une__ligne2 {
   order: 3;
-  margin-top: calc(16 * var(--u));
+  margin-top: calc(-18 * var(--u));
   font-size: calc(64 * var(--u));
   line-height: 1;
   text-align: right;
@@ -198,6 +202,8 @@
   .engage-une__photo {
     width: 100%;
     margin-top: 16px;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .engage-une__ligne2 {

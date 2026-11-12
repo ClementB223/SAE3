@@ -125,7 +125,7 @@ export default function Piece() {
           </section>
 
           <Link className="fiche__personne" to={`/le-casting/${personne.slug}`}>
-            <img src={personne.look.portrait ?? personne.look.photo} alt="" loading="lazy" />
+            <img src={personne.look.affiche} alt="" loading="lazy" />
             <span>
               <span className="rubrique-petite">Portée par</span>
               <span className="fiche__personne-nom">{personne.nom}</span>

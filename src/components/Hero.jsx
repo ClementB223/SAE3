@@ -37,8 +37,8 @@ export default function Hero() {
       <div className="hero__milieu">
         <p className="hero__intro">
           <span className="hero__signature">Festival de Cannes × Vestiaire Collective · 2027</span>
-          Quatre professionnels du cinéma, trop rarement invités au premier plan, ouvrent le festival sur le tapis
-          rouge. Leurs tenues sont entièrement composées de pièces de luxe de seconde main.
+          Trois égéries ouvrent le festival sur le tapis rouge, dans des tenues entièrement composées de pièces de luxe de
+          seconde main.
         </p>
         <img
           className="hero__photo"

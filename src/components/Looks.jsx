@@ -42,7 +42,7 @@ function Look({ personne }) {
         </span>
       </div>
       <h3 className="look__titre">{personne.look.titre}</h3>
-      <p className="look__texte">« {personne.citation} »</p>
+      <p className="look__texte">{personne.look.resume}</p>
       <span className="lien">Découvrir son histoire et son look →</span>
     </Link>
   )
