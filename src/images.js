@@ -9,6 +9,9 @@ import popUp from './assets/scenes/pop-up.webp'
 import afficheWinnie from './assets/affiches/affiche-winnie.webp'
 import afficheAbde from './assets/affiches/affiche-abde.webp'
 import affichePeter from './assets/affiches/affiche-peter.webp'
+import portraitWinnie from './assets/portraits/portrait-winnie.webp'
+import portraitAbde from './assets/portraits/portrait-abde.webp'
+import portraitPeter from './assets/portraits/portrait-peter.webp'
 
 export const images = {
   photoDefile,
@@ -22,4 +25,7 @@ export const images = {
   afficheWinnie,
   afficheAbde,
   affichePeter,
+  portraitWinnie,
+  portraitAbde,
+  portraitPeter,
 }

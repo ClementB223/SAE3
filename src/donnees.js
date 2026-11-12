@@ -17,6 +17,7 @@ export const participants = [
         'Une robe rouge qui laisse toute sa place à la silhouette, des sandales à brides argentées et des boucles en strass. Trois pièces qui avaient déjà vécu, ajustées pour le soir de l’ouverture.',
       photo: images.afficheWinnie,
       affiche: images.afficheWinnie,
+      portrait: images.portraitWinnie,
     },
   },
   {
@@ -35,6 +36,7 @@ export const participants = [
         'Une veste d’officier en laine kaki, une chemise blanche à col cassé et une broche dorée : un uniforme de scène devenu tenue de soirée.',
       photo: images.afficheAbde,
       affiche: images.afficheAbde,
+      portrait: images.portraitAbde,
     },
   },
   {
@@ -53,6 +55,7 @@ export const participants = [
         'Un blazer noir à revers fins, un gilet en laine grise, une cravate en soie noire et des derbies vernies : le costume classique, version seconde main.',
       photo: images.affichePeter,
       affiche: images.affichePeter,
+      portrait: images.portraitPeter,
     },
   },
 ]

@@ -31,7 +31,7 @@ export default function Casting() {
         {participants.map((p, i) => (
           <li className={`portrait${i % 2 ? ' portrait--inverse' : ''}`} key={p.slug}>
             <div className="portrait__visuel">
-              <img className="portrait__image anim-photo" src={p.look.affiche} alt={`Affiche de la campagne, ${p.nom}.`} loading="lazy" />
+              <img className="portrait__image anim-photo" src={p.look.portrait} alt={`Portrait de ${p.nom}.`} loading="lazy" />
             </div>
             <div className="portrait__texte">
               <p className="rubrique-petite">
