@@ -113,25 +113,25 @@
   }
 
   .hero__ligne2 {
-    margin-top: -0.12em;
+    order: 3;
+    margin-top: -0.3em;
   }
 
   .hero__milieu {
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 12px;
+    display: contents;
   }
 
   .hero__photo {
+    order: 2;
     width: 100%;
     height: auto;
     aspect-ratio: 1014 / 571;
   }
 
   .hero__gauche {
-    order: 1;
+    order: 4;
     width: auto;
-    margin-top: 0;
+    margin-top: 28px;
     gap: 24px;
   }
 
