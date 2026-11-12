@@ -9,12 +9,12 @@ const barrages = [
   { barre: 'Par le côté', reponse: 'les 24 marches', note: 'Une entrée latérale pour les personnes à mobilité réduite' },
 ]
 
-const actes = [
-  ['Le casting', 'des métiers que l’on voit trop peu'],
-  ['La rencontre', 'les personnes avant les tenues'],
-  ['Les essayages', 'des pièces de seconde main, ajustées'],
-  ['Le défilé', 'l’ouverture du festival'],
-  ['La vente', '100 % des bénéfices reversés'],
+const programme = [
+  ['Janvier', 'Le casting', 'Avec le Collectif 50/50 et l’AAFA'],
+  ['Février', 'Les rencontres', 'Les personnes avant les tenues'],
+  ['Avril', 'Les essayages', 'Seconde main, ajustée à chaque corps'],
+  ['Soir d’ouverture', 'Le défilé', 'Sur les marches du Palais'],
+  ['Pendant le festival', 'La vente solidaire', '100 % des bénéfices reversés'],
 ]
 
 export default function Projet() {
@@ -62,28 +62,30 @@ export default function Projet() {
             ))}
           </ul>
         </section>
+        <section className="programme" id="deroule" aria-labelledby="programme-titre">
+          <div className="programme__entete">
+            <p className="rubrique">Le déroulé</p>
+            <h2 className="programme__titre" id="programme-titre">
+              Du casting à la Croisette
+            </h2>
+          </div>
+          <ol className="programme__liste">
+            {programme.map(([quand, titre, texte]) => (
+              <li className="programme__ligne" key={titre}>
+                <span className="programme__quand">{quand}</span>
+                <span className="programme__quoi">{titre}</span>
+                <span className="programme__texte">{texte}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="actions programme__fin">
+            <Link className="bouton" to="/le-casting">
+              <span className="bouton__libelle">Rencontrer le casting</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
       </div>
-
-      <section className="generique" id="deroule" aria-labelledby="generique-titre">
-        <p className="generique__surtitre" id="generique-titre">
-          Le déroulé
-        </p>
-        <ol className="generique__liste">
-          {actes.map(([titre, texte], i) => (
-            <li className="generique__acte" key={titre}>
-              <span className="generique__numero">Acte {i + 1}</span>
-              <span className="generique__titre">{titre}</span>
-              <span className="generique__texte">{texte}</span>
-            </li>
-          ))}
-        </ol>
-        <div className="generique__fin">
-          <Link className="bouton bouton--clair" to="/le-casting">
-            <span className="bouton__libelle">Rencontrer le casting</span>
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
     </>
   )
 }

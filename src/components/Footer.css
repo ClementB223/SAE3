@@ -41,11 +41,6 @@
   line-height: 1;
 }
 
-.footer__credit {
-  margin: 0;
-  font-size: 14px;
-  color: var(--blanc-doux);
-}
 
 .footer__contenu {
   display: flex;
