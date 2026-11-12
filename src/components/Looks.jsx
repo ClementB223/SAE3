@@ -48,7 +48,7 @@ export default function Looks() {
   return (
     <section className="looks" id="looks" aria-labelledby="looks-titre">
       <h2 className="looks__titre" id="looks-titre">
-        <span className="looks__titre1">Les looks</span> <em className="looks__titre2">du défilé</em>
+        <span className="looks__titre1">Les égéries</span> <em className="looks__titre2">du défilé</em>
       </h2>
       <div className="looks__grille">
         {participants.slice(0, 3).map((personne, i) => (

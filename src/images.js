@@ -1,11 +1,8 @@
-import photoDefile from './assets/figma/photo-defile.webp'
 import pieceRobe from './assets/figma/piece-robe.webp'
 import sandalesArgent from './assets/pieces/sandales-argent.webp'
 import bouclesDiamant from './assets/pieces/boucles-diamant.webp'
 import derbiesNoirs from './assets/pieces/derbies-noirs.webp'
-import essayage from './assets/scenes/essayage.webp'
 import coulisses from './assets/scenes/coulisses.webp'
-import popUp from './assets/scenes/pop-up.webp'
 import afficheWinnie from './assets/affiches/affiche-winnie.webp'
 import afficheAbde from './assets/affiches/affiche-abde.webp'
 import affichePeter from './assets/affiches/affiche-peter.webp'
@@ -28,14 +25,11 @@ import robeFourreau from './assets/pieces/robe-fourreau-argent.webp'
 import robePlissee from './assets/pieces/robe-plissee-emeraude.webp'
 import smokingIvoire from './assets/pieces/smoking-ivoire.webp'
 export const images = {
-  photoDefile,
   pieceRobe,
   sandalesArgent,
   bouclesDiamant,
   derbiesNoirs,
-  essayage,
   coulisses,
-  popUp,
   afficheWinnie,
   afficheAbde,
   affichePeter,
