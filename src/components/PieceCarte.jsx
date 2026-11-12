@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { formatPrix } from '../donnees.js'
 import { useSelection } from '../selection-contexte.js'
-import { Coeur } from './PieceElements.jsx'
+import Coeur from './Coeur.jsx'
 import './PieceCarte.css'
 
 export function BoutonCoeur({ piece, className = 'piece__favori' }) {

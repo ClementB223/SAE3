@@ -219,6 +219,29 @@
   }
 }
 
+.montee .header--superpose {
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+.montee:not([data-etat='repos']) .header--superpose {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-aspect-ratio: 1 / 1) {
+  .salle__plan {
+    width: max(100vw, min(calc(100svh * 16 / 9), 222vw));
+    transform: translate(-50%, calc(-50% + var(--approche) * 12.92%)) scale(calc(1.12 - var(--cercle) * 0.12 + var(--approche) * 0.3));
+  }
+
+  .salle__image {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 82%, transparent 100%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .montee *,
   .montee *::before,

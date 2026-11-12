@@ -106,7 +106,7 @@ img {
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  white-space: nowrap;
+  max-width: 100%;
   color: var(--noir);
   text-decoration: none;
 }
@@ -120,6 +120,12 @@ img {
 
 .lien:hover {
   color: var(--orange);
+}
+
+@media (pointer: coarse) {
+  .lien {
+    padding: 10px 0;
+  }
 }
 
 .lien--clair {

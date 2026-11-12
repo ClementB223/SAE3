@@ -1,7 +1,6 @@
-import { statuts } from '../donnees.js'
 import './PieceCarte.css'
 
-export function Coeur({ plein }) {
+export default function Coeur({ plein }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path
@@ -12,14 +11,5 @@ export function Coeur({ plein }) {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-export function Statut({ valeur }) {
-  return (
-    <p className={`statut statut--${valeur}`}>
-      <span className="statut__repere" aria-hidden="true" />
-      {statuts[valeur]}
-    </p>
   )
 }

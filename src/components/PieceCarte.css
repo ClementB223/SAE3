@@ -38,39 +38,6 @@
   font-size: 13px;
 }
 
-.statut {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.statut__repere {
-  width: 10px;
-  height: 10px;
-  background: var(--noir);
-}
-
-.statut--reservee {
-  color: var(--orange);
-}
-
-.statut--reservee .statut__repere {
-  background: none;
-  border: 1.5px solid var(--orange);
-}
-
-.statut--vendue {
-  color: var(--rouge);
-}
-
-.statut--vendue .statut__repere {
-  height: 2px;
-  background: var(--rouge);
-}
-
 .piece__textes {
   display: flex;
   flex-direction: column;
@@ -216,6 +183,6 @@ del.piece__prix {
   }
 
   .piece__voir {
-    font-size: 11px;
+    display: none;
   }
 }

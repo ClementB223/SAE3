@@ -92,8 +92,7 @@ export default function Header({ superpose = false }) {
           <ul className="menu__liste">
             {liens.map(({ libelle, href, fin }, i) => (
               <li key={href} style={{ '--i': i }}>
-                <NavLink to={href} end={fin} className="menu__lien" onClick={fermer}>
-                  <span className="menu__numero">0{i + 1}</span>
+                <NavLink to={href} end={fin} className="menu__lien" onClick={fermer}>
                   {libelle}
                 </NavLink>
               </li>

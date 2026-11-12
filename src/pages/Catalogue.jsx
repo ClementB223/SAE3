@@ -46,6 +46,7 @@ export default function Catalogue() {
   const [disponibles, setDisponibles] = useState(false)
   const champ = useRef(null)
   const { hash, key } = useLocation()
+  const [filtresOuverts, setFiltresOuverts] = useState(hash === '#recherche')
 
   useEffect(() => {
     if (hash === '#recherche') champ.current?.focus({ preventScroll: true })
@@ -64,6 +65,7 @@ export default function Catalogue() {
   }, [recherche, categorie, look, besoins, disponibles])
 
   const actifs = recherche || categorie || look || besoins.length || disponibles
+  const nbFiltres = [categorie, look, disponibles].filter(Boolean).length + besoins.length + (recherche ? 1 : 0)
   const reinitialiser = () => {
     setRecherche('')
     setCategorie('')
@@ -97,7 +99,17 @@ export default function Catalogue() {
       </header>
 
       <div className="catalogue">
-        <aside className="catalogue__filtres" aria-label="Filtres">
+        <button
+          type="button"
+          className="catalogue__ouvrir"
+          aria-expanded={filtresOuverts}
+          aria-controls="filtres"
+          onClick={() => setFiltresOuverts((o) => !o)}
+        >
+          <span>Filtrer{nbFiltres ? ` (${nbFiltres})` : ''}</span>
+          <span aria-hidden="true">{filtresOuverts ? '−' : '+'}</span>
+        </button>
+        <aside id="filtres" className={`catalogue__filtres${filtresOuverts ? ' catalogue__filtres--ouverts' : ''}`} aria-label="Filtres">
           <div className="filtre">
             <label className="filtre__legende" htmlFor="recherche">
               Rechercher

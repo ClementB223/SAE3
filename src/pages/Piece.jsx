@@ -1,13 +1,13 @@
 import { Link, useParams } from 'react-router-dom'
 import { formatPrix, parSlug, participants, pieces, piecesDuLook } from '../donnees.js'
 import PieceCarte from '../components/PieceCarte.jsx'
-import { Coeur } from '../components/PieceElements.jsx'
+import Coeur from '../components/Coeur.jsx'
 import { useSelection } from '../selection-contexte.js'
 import Introuvable from './Introuvable.jsx'
 import './pages.css'
 import './Piece.css'
 
-const arguments_ = [
+const raisons = [
   'Une pièce de luxe qui existait déjà : aucune ressource neuve pour la produire.',
   'Elle a déjà vécu une première histoire, elle continue avec vous.',
   'Contrôlée et authentifiée par Vestiaire Collective avant l’envoi.',
@@ -113,7 +113,7 @@ export default function Piece() {
             <details>
               <summary>Pourquoi la seconde main</summary>
               <ul className="produit__arguments">
-                {arguments_.map((a) => (
+                {raisons.map((a) => (
                   <li key={a}>{a}</li>
                 ))}
               </ul>

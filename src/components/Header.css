@@ -242,12 +242,6 @@
     color: var(--or);
   }
 
-  .menu__numero {
-    font-family: var(--police-texte);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    color: var(--orange);
-  }
 
   .menu__secondaires {
     display: flex;

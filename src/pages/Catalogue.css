@@ -6,6 +6,24 @@
   padding-bottom: calc(110 * var(--u));
 }
 
+.catalogue__ouvrir {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid var(--noir);
+  background: var(--blanc);
+  font-family: var(--police-texte);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--noir);
+  cursor: pointer;
+}
+
 .catalogue__filtres {
   position: sticky;
   top: 100px;
@@ -49,6 +67,22 @@
   color: var(--noir);
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+}
+
+@media (pointer: coarse) {
+  .puce {
+    min-height: 40px;
+    padding: 9px 16px;
+  }
+
+  .case {
+    min-height: 40px;
+  }
+
+  .case input {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .puce:hover {
@@ -120,7 +154,16 @@
 
   .catalogue__filtres {
     position: static;
+    display: none;
     padding: 20px;
     background: var(--or-voile);
+  }
+
+  .catalogue__filtres--ouverts {
+    display: flex;
+  }
+
+  .catalogue__ouvrir {
+    display: flex;
   }
 }

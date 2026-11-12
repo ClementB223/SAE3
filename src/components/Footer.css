@@ -111,6 +111,12 @@
   transition: color 0.2s;
 }
 
+@media (pointer: coarse) {
+  .footer__colonne a {
+    padding: 8px 0;
+  }
+}
+
 .footer__colonne a:hover {
   color: var(--orange);
 }

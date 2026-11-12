@@ -88,7 +88,13 @@ del.produit__prix {
 
 .produit__acheter {
   flex: 1;
+  min-width: 0;
   justify-content: center;
+  height: auto;
+  min-height: 56px;
+  padding: 12px 20px;
+  white-space: normal;
+  text-align: center;
 }
 
 .produit__acheter--off,
