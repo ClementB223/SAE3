@@ -23,12 +23,19 @@ export default function Engagement() {
 
       <section className="argent" id="acheter" aria-labelledby="argent-titre">
         <h2 className="argent__titre" id="argent-titre">
-          <span className="argent__chiffre">100 %</span>
+          <span className="argent__chiffre">100{' '}%</span>
           <span className="argent__phrase">des bénéfices de la vente sont reversés à l’inclusion dans l’audiovisuel</span>
         </h2>
         <p className="argent__parcours">
-          Vous choisissez une pièce du défilé <span aria-hidden="true">→</span> vous l’achetez sur Vestiaire Collective{' '}
-          <span aria-hidden="true">→</span> l’argent part aux associations
+          <span>Vous choisissez une pièce du défilé</span>
+          <span className="argent__fleche" aria-hidden="true">
+            →
+          </span>
+          <span>vous l’achetez sur Vestiaire Collective</span>
+          <span className="argent__fleche" aria-hidden="true">
+            →
+          </span>
+          <span>l’argent part aux associations</span>
         </p>
         <Link className="bouton" to="/pieces">
           <span className="bouton__libelle">Voir les pièces</span>

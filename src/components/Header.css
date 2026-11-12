@@ -84,6 +84,7 @@
 }
 
 .header__recherche {
+  flex-shrink: 0;
   padding: 0;
 }
 
@@ -142,6 +143,26 @@
 .header--ouvert .header__burger-trait:last-child {
   top: 21.5px;
   transform: rotate(-45deg);
+}
+
+@media (max-width: 1200px) {
+  .header__nav {
+    gap: 22px;
+  }
+
+  .header__lien {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .header__selection-texte {
+    display: none;
+  }
+
+  .header__selection-nombre {
+    display: inline;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 960px) {
