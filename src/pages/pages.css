@@ -99,6 +99,15 @@
   color: var(--rouge);
 }
 
+.entete-page--compacte .entete-page__ligne,
+.entete-page--compacte .entete-page__accent {
+  white-space: nowrap;
+}
+
+.entete-page--compacte .entete-page__ligne {
+  font-size: clamp(40px, calc(100 * var(--u)), 100px);
+}
+
 .entete-page__chapeau {
   margin: 0;
   font-size: 18px;
@@ -280,6 +289,14 @@
 
   .entete-page__accent {
     font-size: 9vw;
+  }
+
+  .entete-page--compacte .entete-page__ligne {
+    font-size: 10vw;
+  }
+
+  .entete-page--compacte .entete-page__accent {
+    font-size: 6.4vw;
   }
 
   .chiffres {

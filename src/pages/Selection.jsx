@@ -20,7 +20,7 @@ export default function Selection() {
         <li aria-current="page">Ma sélection</li>
       </ol>
 
-      <header className="entete-page">
+      <header className="entete-page entete-page--compacte">
         <div>
           <p className="rubrique">Ma sélection</p>
           <h1 className="entete-page__titre anim-titre">

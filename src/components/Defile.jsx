@@ -13,7 +13,6 @@ export default function Defile() {
           width="823"
           height="463"
         />
-        <figcaption className="defile__legende">La montée des marches, quelques minutes avant la première projection.</figcaption>
       </figure>
 
       <div className="defile__texte">

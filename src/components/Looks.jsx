@@ -47,11 +47,6 @@ function Look({ personne }) {
 export default function Looks() {
   return (
     <section className="looks" id="looks" aria-labelledby="looks-titre">
-      <div className="filet looks__filet">
-        <Link className="lien" to="/le-casting">
-          Tout le casting →
-        </Link>
-      </div>
       <h2 className="looks__titre" id="looks-titre">
         <span className="looks__titre1">Les looks</span> <em className="looks__titre2">du défilé</em>
       </h2>

@@ -6,8 +6,13 @@ import './pages.css'
 import './Catalogue.css'
 
 const categories = ['Vêtements', 'Chaussures', 'Accessoires']
-const coupes = [...new Set(pieces.map((p) => p.coupe))]
-const adaptations = [...new Set(pieces.flatMap((p) => p.adaptations))].sort((a, b) => a.localeCompare(b, 'fr'))
+const besoinsGroupes = {
+  'Fermetures faciles': ['Boutons faciles', 'Fermeture latérale facile', 'Fermoir facile', 'Se noue sans fermoir'],
+  'Taille souple': ['Taille ajustable', 'Taille élastique', 'Taille unique', 'Coupe ample', 'Manches ajustables'],
+  'Position assise': ['Pensé pour la position assise'],
+  'Talon bas ou plat': ['Talon bas', 'Talon plat', 'Bride réglable'],
+}
+const adaptations = Object.keys(besoinsGroupes)
 
 const normaliser = (t) =>
   t
@@ -37,7 +42,6 @@ export default function Catalogue() {
   const [recherche, setRecherche] = useState('')
   const [categorie, setCategorie] = useState('')
   const [look, setLook] = useState('')
-  const [coupe, setCoupe] = useState('')
   const [besoins, setBesoins] = useState([])
   const [disponibles, setDisponibles] = useState(false)
   const champ = useRef(null)
@@ -53,19 +57,17 @@ export default function Catalogue() {
       if (q && !normaliser(`${p.marque} ${p.nom} ${p.couleur} ${p.matiere}`).includes(q)) return false
       if (categorie && p.categorie !== categorie) return false
       if (look && p.look !== look) return false
-      if (coupe && p.coupe !== coupe) return false
-      if (besoins.some((b) => !p.adaptations.includes(b))) return false
+      if (besoins.some((b) => !besoinsGroupes[b].some((a) => p.adaptations.includes(a)))) return false
       if (disponibles && p.statut !== 'disponible') return false
       return true
     })
-  }, [recherche, categorie, look, coupe, besoins, disponibles])
+  }, [recherche, categorie, look, besoins, disponibles])
 
-  const actifs = recherche || categorie || look || coupe || besoins.length || disponibles
+  const actifs = recherche || categorie || look || besoins.length || disponibles
   const reinitialiser = () => {
     setRecherche('')
     setCategorie('')
     setLook('')
-    setCoupe('')
     setBesoins([])
     setDisponibles(false)
   }
@@ -89,7 +91,7 @@ export default function Catalogue() {
           </h1>
         </div>
         <p className="entete-page__chapeau">
-          {pieces.length} pièces de seconde main, du 38 au 56 : celles portées sur les marches et toute la vente solidaire. Filtrez par coupe ou par
+          {pieces.length} pièces de seconde main, du 38 au 56 : celles portées sur les marches et toute la vente solidaire. Filtrez par
           besoin d’accessibilité : 100 % des bénéfices sont reversés à l’inclusion dans l’audiovisuel.
         </p>
       </header>
@@ -126,8 +128,6 @@ export default function Catalogue() {
               ))}
             </select>
           </div>
-
-          <Puces legende="Coupe" options={coupes} valeur={coupe} changer={setCoupe} />
 
           <fieldset className="filtre">
             <legend className="filtre__legende">Accessibilité et confort</legend>

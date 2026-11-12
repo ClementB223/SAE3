@@ -35,21 +35,12 @@ export default function Hero() {
       </h1>
 
       <div className="hero__milieu">
+        <div className="hero__gauche">
         <p className="hero__intro">
           <span className="hero__signature">Festival de Cannes × Vestiaire Collective · 2027</span>
           Trois égéries ouvrent le festival sur le tapis rouge, dans des tenues entièrement composées de pièces de luxe de
           seconde main.
         </p>
-        <img
-          className="hero__photo"
-          src={banniere}
-          alt="Une personne en fauteuil roulant monte les marches du Palais par une rampe, sous les objectifs des photographes."
-          width="1014"
-          height="571"
-        />
-      </div>
-
-      <div className="hero__bas">
         <div className="hero__actions">
           <Link className="bouton" to="/le-casting">
             <span className="bouton__libelle">Découvrir le casting</span>
@@ -59,6 +50,14 @@ export default function Hero() {
             Lire le projet
           </Link>
         </div>
+        </div>
+        <img
+          className="hero__photo"
+          src={banniere}
+          alt="Une personne en fauteuil roulant monte les marches du Palais par une rampe, sous les objectifs des photographes."
+          width="1014"
+          height="571"
+        />
       </div>
     </section>
   )

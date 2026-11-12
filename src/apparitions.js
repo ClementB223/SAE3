@@ -52,15 +52,14 @@ export function useApparitions(cle) {
       })
     })
 
-    const titreManifeste = document.querySelector('.manifeste__titre')
-    const barre = titreManifeste
-      ? ScrollTrigger.create({
-          trigger: titreManifeste,
-          start: 'top 85%',
-          once: true,
-          onEnter: () => titreManifeste.classList.add('est-visible'),
-        })
-      : null
+    const barres = gsap.utils.toArray('.manifeste__titre, .barrage').map((el) =>
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 75%',
+        onEnter: () => el.classList.add('est-visible'),
+        onLeaveBack: () => el.classList.remove('est-visible'),
+      }),
+    )
 
     const rafraichir = () => ScrollTrigger.refresh()
     window.addEventListener('load', rafraichir)
@@ -68,7 +67,7 @@ export function useApparitions(cle) {
 
     return () => {
       window.removeEventListener('load', rafraichir)
-      barre?.kill()
+      barres.forEach((b) => b.kill())
       mm.revert()
     }
   }, [cle])

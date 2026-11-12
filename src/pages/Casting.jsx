@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { formatPrix, participants, piecesDuLook, prixDes } from '../donnees.js'
+import { participants } from '../donnees.js'
 import './pages.css'
 import './Casting.css'
 
@@ -13,7 +13,7 @@ export default function Casting() {
         <li aria-current="page">Le casting</li>
       </ol>
 
-      <header className="entete-page">
+      <header className="entete-page entete-page--compacte">
         <div>
           <p className="rubrique">Le casting</p>
           <h1 className="entete-page__titre anim-titre">
@@ -40,20 +40,6 @@ export default function Casting() {
               <h2 className="portrait__nom">{p.nom}</h2>
               <p className="citation portrait__citation">{p.message}</p>
               <p className="texte-courant">{p.presentation}</p>
-              <dl className="portrait__faits">
-                <div>
-                  <dt>Le look</dt>
-                  <dd>
-                    « {p.look.titre} » · {p.look.resume}
-                  </dd>
-                </div>
-                <div>
-                  <dt>Les pièces</dt>
-                  <dd>
-                    {piecesDuLook(p.slug).length} pièces de seconde main, dès {formatPrix(prixDes(p.slug))}
-                  </dd>
-                </div>
-              </dl>
               <Link className="bouton" to={`/le-casting/${p.slug}`}>
                 <span className="bouton__libelle">Son look « {p.look.titre} »</span>
                 <span aria-hidden="true">→</span>

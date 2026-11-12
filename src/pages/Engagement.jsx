@@ -3,6 +3,65 @@ import { images } from '../images.js'
 import './pages.css'
 import './Engagement.css'
 
+const chapitres = [
+  {
+    id: 'constat',
+    numero: '01',
+    titre: 'Le constat',
+    textes: [
+      'Sur les marches de Cannes, le luxe ne parle qu’à un seul corps. Les pièces de défilé sont pensées pour une taille 36, des silhouettes debout et des morphologies qui se ressemblent toutes. Celles et ceux qui sortent de ce cadre doivent faire sans, ou ne pas venir.',
+      'Le cinéma raconte pourtant toutes les histoires. Il serait temps que le tapis rouge, lui aussi, accueille tous les corps qui les portent à l’écran.',
+    ],
+  },
+  {
+    id: 'seconde-main',
+    numero: '02',
+    titre: 'Le choix de la seconde main',
+    textes: [
+      'Chaque pièce du défilé existe déjà. Elle a été portée, aimée, puis confiée à Vestiaire Collective par celles et ceux qui l’ont achetée. Nous ne faisons rien fabriquer : nous faisons circuler.',
+      'Ce choix nous permet de proposer des coupes et des tailles que les collections neuves oublient, du 38 au 56, et d’adapter certaines pièces aux besoins de chacun : taille élastique, fermetures faciles, pantalons pensés pour la position assise.',
+      'Chaque pièce est contrôlée et authentifiée par les équipes de Vestiaire Collective avant d’être remise en vente.',
+    ],
+  },
+  {
+    id: 'associations',
+    numero: '03',
+    titre: 'Où va l’argent',
+    textes: [
+      'Après le défilé, toutes les pièces sont mises en vente sur Vestiaire Collective. La totalité des bénéfices est reversée à deux associations qui travaillent, toute l’année, à ouvrir le cinéma à celles et ceux qu’il laisse encore de côté.',
+    ],
+    associations: [
+      {
+        nom: 'Collectif 50/50',
+        texte:
+          'Il agit pour l’égalité et la diversité dans le cinéma et l’audiovisuel. Votre achat finance des formations pour des techniciennes et des techniciens encore trop peu représentés sur les plateaux.',
+      },
+      {
+        nom: 'AAFA',
+        texte:
+          'L’association des actrices et acteurs de France défend tous les profils d’interprètes. Votre achat finance des castings ouverts à tous les corps, tous les âges et toutes les situations de handicap.',
+      },
+    ],
+  },
+  {
+    id: 'conciergerie',
+    numero: '04',
+    titre: 'Sur la Croisette',
+    textes: [
+      'Pendant les douze jours du festival, un pop-up solidaire s’installe sur la Croisette. On y essaie les pièces du défilé, on y rencontre celles et ceux qui les ont portées, et on peut repartir avec.',
+      'À côté, une conciergerie inclusive accueille chaque accrédité qui n’a pas trouvé sa tenue. Sélection, essayage et retouches y sont faits sur place et sans frais, pour que personne ne renonce à monter les marches faute d’une tenue à sa taille.',
+    ],
+  },
+]
+
+const promesses = [
+  'Aucune pièce neuve fabriquée pour le défilé.',
+  'Toutes les tailles, du 38 au 56, et des pièces adaptées aux corps en situation de handicap.',
+  '100 % des bénéfices reversés au Collectif 50/50 et à l’AAFA.',
+  'Des égéries choisies pour ce qu’elles portent à l’écran, pas pour leur taille.',
+  'Une conciergerie gratuite ouverte à tous les accrédités du festival.',
+]
+
 export default function Engagement() {
   return (
     <div className="page">
@@ -13,71 +72,87 @@ export default function Engagement() {
         <li aria-current="page">Notre engagement</li>
       </ol>
 
-      <section className="engage-une" aria-labelledby="engage-titre">
-        <h1 className="engage-une__titre" id="engage-titre">
-          <span className="engage-une__ligne1">Habiller tout le monde</span>
-          <em className="engage-une__ligne2">c’est ça, le vrai luxe</em>
+      <header className="engage-tete">
+        <p className="rubrique">Notre engagement</p>
+        <h1 className="engage-tete__titre anim-titre">
+          <span>Habiller tout le monde</span>
+          <em>c’est ça, le vrai luxe</em>
         </h1>
-        <img className="engage-une__photo" src={images.coulisses} alt="Des participants de tous les âges et de toutes les morphologies se préparent en coulisses." />
+      </header>
+
+      <section className="engage-manifeste" aria-label="Manifeste">
+        <p className="engage-manifeste__texte">
+          Le Premier Rôle est né d’une conviction simple : le luxe n’a de sens que s’il peut être porté par tout le monde. Pour
+          l’ouverture du Festival de Cannes, Vestiaire Collective habille trois égéries et des participants de toutes les
+          morphologies, uniquement avec des pièces de seconde main.
+        </p>
+        <div className="engage-manifeste__colonnes">
+          <p>
+            Pas de collection capsule, pas de pièces fabriquées pour l’occasion. Des vêtements qui ont déjà une histoire, choisis
+            pour leur coupe et ajustés à celles et ceux qui les portent.
+          </p>
+          <p>
+            Après le défilé, tout est remis en vente. Ce qui a brillé sur les marches finance celles et ceux qui feront le
+            cinéma de demain.
+          </p>
+        </div>
       </section>
 
-      <section className="argent" id="acheter" aria-labelledby="argent-titre">
-        <h2 className="argent__titre" id="argent-titre">
-          <span className="argent__chiffre">100{' '}%</span>
-          <span className="argent__phrase">des bénéfices de la vente sont reversés à l’inclusion dans l’audiovisuel</span>
+      <figure className="engage-photo">
+        <img className="anim-photo" src={images.coulisses} alt="Des participants de tous les âges et de toutes les morphologies se préparent en coulisses." loading="lazy" />
+        <figcaption>En coulisses, avant la montée des marches.</figcaption>
+      </figure>
+
+      <div className="chapitres">
+        {chapitres.map((c) => (
+          <section className="chapitre" id={c.id} key={c.id} aria-labelledby={`${c.id}-titre`}>
+            <div className="chapitre__tete">
+              <span className="chapitre__numero">{c.numero}</span>
+              <h2 className="chapitre__titre" id={`${c.id}-titre`}>
+                {c.titre}
+              </h2>
+            </div>
+            <div className="chapitre__corps">
+              {c.textes.map((t) => (
+                <p key={t}>{t}</p>
+              ))}
+              {c.associations && (
+                <ul className="chapitre__assos">
+                  {c.associations.map((a) => (
+                    <li key={a.nom}>
+                      <span className="chapitre__asso">{a.nom}</span>
+                      <p>{a.texte}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section className="promesses" id="acheter" aria-labelledby="promesses-titre">
+        <h2 className="promesses__titre" id="promesses-titre">
+          Nos engagements
         </h2>
-        <p className="argent__parcours">
-          <span>Vous choisissez une pièce du défilé</span>
-          <span className="argent__fleche" aria-hidden="true">
-            →
-          </span>
-          <span>vous l’achetez sur Vestiaire Collective</span>
-          <span className="argent__fleche" aria-hidden="true">
-            →
-          </span>
-          <span>l’argent part aux associations</span>
-        </p>
-        <Link className="bouton" to="/pieces">
-          <span className="bouton__libelle">Voir les pièces</span>
-          <span aria-hidden="true">→</span>
-        </Link>
+        <ol className="promesses__liste">
+          {promesses.map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ol>
       </section>
 
-      <section className="assos" id="associations" aria-labelledby="assos-titre">
-        <p className="rubrique" id="assos-titre">
-          Les associations
-        </p>
-        <ul className="assos__liste">
-          <li>
-            <span className="assos__nom">Collectif 50/50</span>
-            <span className="assos__texte">L’égalité et la diversité dans le cinéma</span>
-            <span className="assos__finance">Votre achat finance des formations pour des techniciennes et techniciens trop peu représentés</span>
-          </li>
-          <li>
-            <span className="assos__nom">AAFA</span>
-            <span className="assos__texte">Les actrices et acteurs, de tous les profils</span>
-            <span className="assos__finance">Votre achat finance des castings ouverts à tous les corps, âges et handicaps</span>
-          </li>
-        </ul>
-      </section>
-
-      <section className="diptyque" id="conciergerie" aria-label="Sur la Croisette">
-        <figure className="diptyque__volet">
-          <img className="anim-photo" src={images.popUp} alt="" loading="lazy" />
-          <figcaption>
-            <span className="diptyque__titre">Le pop-up solidaire</span>
-            <span className="diptyque__texte">Sur la Croisette, pendant tout le festival</span>
-            <span className="diptyque__plus">On y essaie les pièces du défilé et on y rencontre les participants.</span>
-          </figcaption>
-        </figure>
-        <figure className="diptyque__volet diptyque__volet--decale">
-          <img className="anim-photo" src={images.essayage} alt="" loading="lazy" />
-          <figcaption>
-            <span className="diptyque__titre">La conciergerie inclusive</span>
-            <span className="diptyque__texte">Une tenue pour chaque accrédité, quelle que soit sa taille</span>
-            <span className="diptyque__plus">Sélection, essayage et retouches sur place, sans frais, pour monter les marches.</span>
-          </figcaption>
-        </figure>
+      <section className="engage-fin" aria-label="Aller plus loin">
+        <p className="engage-fin__texte">Chaque achat prolonge le défilé.</p>
+        <div className="actions">
+          <Link className="bouton" to="/pieces">
+            <span className="bouton__libelle">Voir les pièces</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link className="lien" to="/le-casting">
+            Découvrir le casting →
+          </Link>
+        </div>
       </section>
     </div>
   )

@@ -1,244 +1,245 @@
-.engage-une {
+.engage-tete {
+  padding: calc(24 * var(--u)) 0 calc(72 * var(--u));
+}
+
+.engage-tete__titre {
   display: flex;
   flex-direction: column;
-  padding-bottom: calc(110 * var(--u));
-}
-
-.engage-une__titre {
-  display: contents;
-  font-weight: 400;
-}
-
-.engage-une__ligne1,
-.engage-une__ligne2 {
-  position: relative;
-  z-index: 1;
-  display: block;
+  margin: 16px 0 0;
   font-family: var(--police-titre);
+  font-weight: 400;
   color: var(--rouge);
-  white-space: nowrap;
 }
 
-.engage-une__ligne1 {
-  order: 1;
-  margin-top: calc(12 * var(--u));
-  font-size: calc(104 * var(--u));
-  line-height: 0.9;
+.engage-tete__titre span {
+  font-size: clamp(44px, calc(104 * var(--u)), 104px);
+  line-height: 0.95;
   text-transform: uppercase;
 }
 
-.engage-une__photo {
-  order: 2;
-  display: block;
-  align-self: flex-end;
-  width: calc(1014 * var(--u));
-  aspect-ratio: 2 / 1;
-  margin-top: calc(-46 * var(--u));
-  object-fit: cover;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 9%, #000 26%, #000 92%, transparent 100%);
+.engage-tete__titre em {
+  font-size: clamp(30px, calc(64 * var(--u)), 64px);
+  line-height: 1.1;
+  color: var(--noir);
 }
 
-.engage-une__ligne2 {
-  order: 3;
-  margin-top: calc(-18 * var(--u));
-  font-size: calc(64 * var(--u));
-  line-height: 1;
-  text-align: right;
-}
-
-.argent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: calc(36 * var(--u));
+.engage-manifeste {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: calc(40 * var(--u));
+  max-width: 1040px;
+  margin-left: auto;
   padding-bottom: calc(110 * var(--u));
 }
 
-.argent__titre {
-  display: flex;
-  align-items: center;
-  gap: calc(40 * var(--u));
+.engage-manifeste__texte {
   margin: 0;
-  font-weight: 400;
-}
-
-.argent__chiffre {
-  flex-shrink: 0;
   font-family: var(--police-titre);
-  font-size: clamp(56px, calc(104 * var(--u)), 104px);
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--rouge);
+  font-size: clamp(24px, calc(36 * var(--u)), 36px);
+  line-height: 1.3;
 }
 
-.argent__phrase {
-  max-width: 560px;
-  font-family: var(--police-titre);
-  font-size: clamp(22px, calc(32 * var(--u)), 32px);
-  line-height: 1.2;
+.engage-manifeste__colonnes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px calc(56 * var(--u));
 }
 
-.argent__parcours {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 14px;
+.engage-manifeste__colonnes p {
   margin: 0;
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--noir-doux);
 }
 
-.argent__parcours > span:not(.argent__fleche) {
-  white-space: nowrap;
+.engage-photo {
+  margin: 0 0 calc(120 * var(--u));
 }
 
-.argent__fleche {
+.engage-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+.engage-photo figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--noir-doux);
+}
+
+.chapitres {
+  border-top: 1px solid var(--noir);
+}
+
+.chapitre {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 24px calc(80 * var(--u));
+  padding: calc(64 * var(--u)) 0;
+  border-bottom: 1px solid var(--noir);
+  scroll-margin-top: 100px;
+}
+
+.chapitre__tete {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chapitre__numero {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
   color: var(--rouge);
 }
 
-.assos {
-  padding-bottom: calc(110 * var(--u));
+.chapitre__titre {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(32px, calc(48 * var(--u)), 48px);
+  line-height: 1.05;
 }
 
-.assos__liste {
+.chapitre__corps {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px calc(120 * var(--u));
-  margin: 16px 0 0;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 640px;
+}
+
+.chapitre__corps > p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.chapitre__assos {
+  display: grid;
+  gap: 24px;
+  margin: 12px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.assos__liste li {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.assos__nom {
-  font-family: var(--police-titre);
-  font-size: clamp(40px, calc(64 * var(--u)), 64px);
-  line-height: 1;
-}
-
-.assos__texte {
-  font-size: 16px;
-  color: var(--noir-doux);
-}
-
-.assos__finance {
-  max-width: 400px;
-  margin-top: 6px;
-  padding-left: 12px;
+.chapitre__assos li {
+  padding-left: 16px;
   border-left: 2px solid var(--rouge);
-  font-size: 15px;
-  line-height: 1.5;
 }
 
-.diptyque {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: calc(40 * var(--u));
-  align-items: start;
-  padding-bottom: calc(110 * var(--u));
-}
-
-.diptyque__volet {
-  margin: 0;
-}
-
-.diptyque__volet--decale {
-  margin-top: calc(80 * var(--u));
-}
-
-.diptyque__volet img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-.diptyque__volet figcaption {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 14px;
-}
-
-.diptyque__titre {
+.chapitre__asso {
   font-family: var(--police-titre);
   font-size: 28px;
   line-height: 1.1;
 }
 
-.diptyque__texte {
-  font-size: 15px;
+.chapitre__assos p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--noir-doux);
 }
 
-.diptyque__plus {
-  max-width: 440px;
-  margin-top: 6px;
-  font-size: 15px;
+.promesses {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 24px calc(80 * var(--u));
+  padding: calc(110 * var(--u)) 0;
+  scroll-margin-top: 100px;
+}
+
+.promesses__titre {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(32px, calc(48 * var(--u)), 48px);
+  line-height: 1.05;
+  color: var(--rouge);
+}
+
+.promesses__liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: promesse;
+}
+
+.promesses__liste li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--or);
+  font-size: 18px;
   line-height: 1.5;
+  counter-increment: promesse;
+}
+
+.promesses__liste li::before {
+  content: counter(promesse, decimal-leading-zero);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 2.1;
+  color: var(--or);
+}
+
+.engage-fin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: calc(110 * var(--u));
+}
+
+.engage-fin__texte {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-size: clamp(28px, calc(40 * var(--u)), 40px);
+}
+
+@media (max-width: 900px) {
+  .chapitre,
+  .promesses {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chapitre__tete {
+    position: static;
+  }
 }
 
 @media (max-width: 720px) {
-  .engage-une {
-    padding-bottom: 64px;
+  .engage-tete {
+    padding-bottom: 40px;
   }
 
-  .engage-une__ligne1,
-  .engage-une__ligne2 {
-    white-space: normal;
+  .engage-manifeste {
+    padding-bottom: 56px;
   }
 
-  .engage-une__ligne1 {
-    font-size: 13vw;
-  }
-
-  .engage-une__photo {
-    width: 100%;
-    margin-top: 16px;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .engage-une__ligne2 {
-    margin-top: 12px;
-    font-size: 8.5vw;
-  }
-
-  .argent,
-  .assos,
-  .diptyque {
-    padding-bottom: 64px;
-  }
-
-  .argent__titre {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .argent__parcours {
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .argent__fleche {
-    display: inline-block;
-    transform: rotate(90deg);
-  }
-
-  .diptyque {
+  .engage-manifeste__colonnes {
     grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
   }
 
-  .diptyque__volet--decale {
-    margin-top: 0;
+  .engage-photo {
+    margin-bottom: 56px;
+  }
+
+  .engage-photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .chapitre {
+    padding: 40px 0;
+  }
+
+  .promesses,
+  .engage-fin {
+    padding: 56px 0;
   }
 }

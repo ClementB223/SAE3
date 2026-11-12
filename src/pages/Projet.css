@@ -29,7 +29,7 @@
 
 .projet-une__ligne2 {
   order: 3;
-  margin-top: calc(-64 * var(--u));
+  margin-top: calc(16 * var(--u));
   font-size: calc(104 * var(--u));
   line-height: 1;
   text-align: right;
@@ -41,7 +41,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: calc(24 * var(--u));
-  margin-top: calc(-40 * var(--u));
+  margin-top: calc(24 * var(--u));
 }
 
 .projet-une__chapeau {
@@ -62,43 +62,16 @@
   color: var(--blanc);
 }
 
-.projet-une__fond {
-  position: absolute;
-  inset: 0;
+.projet-une__lecteur {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
+  object-fit: contain;
+  background: var(--noir);
 }
 
-.projet-une__lecture {
-  position: relative;
-  width: 84px;
-  height: 84px;
-  border: 1.5px solid var(--blanc);
-  border-radius: 50%;
-}
 
-.projet-une__lecture::after {
-  content: '';
-  position: absolute;
-  left: 34px;
-  top: 26px;
-  border-style: solid;
-  border-width: 16px 0 16px 24px;
-  border-color: transparent transparent transparent var(--blanc);
-}
 
-.projet-une__mention {
-  position: absolute;
-  right: 24px;
-  top: 22px;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--or);
-}
 
 .barrages {
   padding: calc(72 * var(--u)) 0 calc(120 * var(--u));
@@ -151,6 +124,44 @@
   height: max(6px, calc(12 * var(--u)));
   background: var(--noir);
   transform: rotate(-3deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .barrage__barre::after {
+    transform: rotate(-3deg) scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+  }
+
+  .barrage.est-visible .barrage__barre::after {
+    transform: rotate(-3deg) scaleX(1);
+  }
+
+  .barrage__reponse {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition:
+      clip-path 0.35s ease-in,
+      opacity 0.2s;
+  }
+
+  .barrage.est-visible .barrage__reponse {
+    opacity: 1;
+    clip-path: inset(-20% -5% -20% 0);
+    transition:
+      clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.5s,
+      opacity 0.2s 0.5s;
+  }
+
+  .barrage__note {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .barrage.est-visible .barrage__note {
+    opacity: 1;
+    transition: opacity 0.5s 0.9s;
+  }
 }
 
 .barrage__reponse {
@@ -252,16 +263,7 @@
     width: 100%;
   }
 
-  .projet-une__lecture {
-    width: 60px;
-    height: 60px;
-  }
 
-  .projet-une__lecture::after {
-    left: 24px;
-    top: 18px;
-    border-width: 12px 0 12px 17px;
-  }
 
   .programme,
   .programme__ligne {

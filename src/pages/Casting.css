@@ -10,7 +10,6 @@
   gap: 48px calc(110 * var(--u));
   align-items: center;
   padding: calc(72 * var(--u)) 0;
-  border-top: 1px solid var(--noir);
 }
 
 .portrait--inverse .portrait__visuel {
@@ -60,33 +59,9 @@
   color: var(--rouge);
 }
 
-.portrait__faits {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px 24px;
-  width: 100%;
-  margin: 0;
-}
 
-.portrait__faits div {
-  padding-top: 14px;
-  border-top: 1px solid var(--noir);
-}
 
-.portrait__faits dt {
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 
-.portrait__faits dd {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--noir-doux);
-}
 
 @media (max-width: 900px) {
   .portrait {
@@ -100,9 +75,5 @@
 
   .portrait__numero {
     left: 8px;
-  }
-
-  .portrait__faits {
-    grid-template-columns: minmax(0, 1fr);
   }
 }

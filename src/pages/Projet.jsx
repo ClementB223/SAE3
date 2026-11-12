@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { images } from '../images.js'
 import './pages.css'
 import './Projet.css'
 
@@ -38,10 +37,8 @@ export default function Projet() {
               Faire du tapis rouge le reflet de la vraie vie, en habillant des professionnels du cinéma de toutes morphologies avec
               des pièces de luxe de seconde main.
             </p>
-            <div className="projet-une__video" role="img" aria-label="Emplacement de la vidéo de présentation, bientôt disponible">
-              <img className="projet-une__fond" src={images.photoDefile} alt="" />
-              <span className="projet-une__lecture" aria-hidden="true" />
-              <span className="projet-une__mention">Le projet en vidéo · bientôt</span>
+            <div className="projet-une__video">
+              <video className="projet-une__lecteur" src="/video/projet-3d.mp4" controls playsInline preload="metadata" aria-label="Vidéo de présentation du projet" />
             </div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { formatPrix, parSlug, participants, pieces, piecesDuLook } from '../donnees.js'
 import PieceCarte from '../components/PieceCarte.jsx'
-import { Coeur, Statut } from '../components/PieceElements.jsx'
+import { Coeur } from '../components/PieceElements.jsx'
 import { useSelection } from '../selection-contexte.js'
 import Introuvable from './Introuvable.jsx'
 import './pages.css'
@@ -49,14 +49,10 @@ export default function Piece() {
       <article className="produit">
         <div className={`produit__visuel${vendue ? ' produit__visuel--vendu' : ''}`}>
           {piece.image ? <img src={piece.image} alt={`${piece.nom}, ${piece.marque}.`} /> : null}
-          <span className="produit__unique">Pièce unique</span>
         </div>
 
         <div className="produit__infos">
-          <div className="produit__ligne">
-            <span className="produit__marque">{piece.marque}</span>
-            <Statut valeur={piece.statut} />
-          </div>
+          <span className="produit__marque">{piece.marque}</span>
           <h1 className="produit__nom">{piece.nom}</h1>
           {vendue ? <del className="produit__prix">{formatPrix(piece.prix)}</del> : <p className="produit__prix">{formatPrix(piece.prix)}</p>}
 
@@ -75,7 +71,6 @@ export default function Piece() {
             ) : (
               <a className="bouton produit__acheter" href={lienVestiaire(piece)} target="_blank" rel="noreferrer">
                 <span className="bouton__libelle">Acheter sur Vestiaire Collective</span>
-                <span aria-hidden="true">↗</span>
               </a>
             )}
             <button

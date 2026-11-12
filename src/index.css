@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/AlbraDisplayTRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --orange: #ff5b29;
   --blanc: #ffffff;
@@ -11,7 +19,7 @@
   --or-voile-fort: color-mix(in srgb, var(--or) 30%, var(--blanc));
 
   --police-titre: 'Albra', 'Playfair Display', Georgia, serif;
-  --police-texte: 'Helvetica Now Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --police-texte: 'Helvetica Neue', Helvetica, 'Inter', Arial, sans-serif;
 
   --marge: 40px;
   --u: min(1px, calc(100vw / 1440));

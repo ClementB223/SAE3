@@ -26,15 +26,6 @@
   opacity: 0.4;
 }
 
-.produit__unique {
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  padding: 5px 10px;
-  background: var(--blanc);
-  font-weight: 500;
-  font-size: 13px;
-}
 
 .produit__infos {
   display: flex;
@@ -42,12 +33,6 @@
   padding-top: 8px;
 }
 
-.produit__ligne {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
 
 .produit__marque {
   font-weight: 700;

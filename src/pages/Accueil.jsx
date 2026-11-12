@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
 import Defile from '../components/Defile.jsx'
 import Looks from '../components/Looks.jsx'
