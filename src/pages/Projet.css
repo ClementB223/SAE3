@@ -166,63 +166,59 @@
   color: var(--noir-doux);
 }
 
-.generique {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: calc(120 * var(--u)) var(--marge);
-  background: var(--noir);
-  color: var(--blanc);
-  text-align: center;
+.programme {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 32px calc(80 * var(--u));
+  padding: calc(72 * var(--u)) 0 calc(110 * var(--u));
+  border-top: 1px solid var(--noir);
 }
 
-.generique__surtitre {
-  margin: 0 0 calc(56 * var(--u));
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--or);
+.programme__titre {
+  margin: 8px 0 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(34px, calc(48 * var(--u)), 48px);
+  line-height: 1.05;
 }
 
-.generique__liste {
-  display: flex;
-  flex-direction: column;
-  gap: calc(44 * var(--u));
+.programme__liste {
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--noir);
 }
 
-.generique__acte {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+.programme__ligne {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 5fr);
+  align-items: baseline;
+  gap: 4px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--noir);
 }
 
-.generique__numero {
-  font-size: 11px;
-  letter-spacing: 0.3em;
+.programme__quand {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blanc-doux);
+  color: var(--rouge);
 }
 
-.generique__titre {
+.programme__quoi {
   font-family: var(--police-titre);
-  font-size: clamp(34px, calc(56 * var(--u)), 56px);
-  line-height: 1;
+  font-size: 24px;
+  line-height: 1.15;
 }
 
-.generique__texte {
-  font-family: var(--police-titre);
-  font-style: italic;
-  font-size: 19px;
-  color: var(--or);
+.programme__texte {
+  font-size: 15px;
+  color: var(--noir-doux);
 }
 
-.generique__fin {
-  margin-top: calc(72 * var(--u));
+.programme__fin {
+  grid-column: 2;
 }
 
 @media (max-width: 720px) {
@@ -265,6 +261,15 @@
     left: 24px;
     top: 18px;
     border-width: 12px 0 12px 17px;
+  }
+
+  .programme,
+  .programme__ligne {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .programme__fin {
+    grid-column: auto;
   }
 
   .barrage:nth-child(n) {

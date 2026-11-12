@@ -38,7 +38,6 @@ export default function Footer() {
         <img className="footer__photo" src={photoCloture} alt="" loading="lazy" />
         <div className="footer__phrase">
           <p className="footer__citation">Le premier rôle appartient à tous les corps</p>
-          <p className="footer__credit">Élodie, Noé, Sora et Abde, le soir de l’ouverture.</p>
         </div>
       </div>
 
