@@ -2,7 +2,6 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logoNoir from '../assets/logo/logo-collab-noir.png'
 import logoBlanc from '../assets/logo/logo-collab.png'
-import iconeRecherche from '../assets/figma/recherche.svg'
 import iconeCoeur from '../assets/figma/coeur.svg'
 import { useSelection } from '../selection-contexte.js'
 import './Header.css'
@@ -62,9 +61,6 @@ export default function Header({ superpose = false }) {
         </nav>
 
         <div className="header__actions">
-          <Link to="/pieces#recherche" className="header__recherche" aria-label="Rechercher une pièce">
-            <img src={iconeRecherche} alt="" width="44" height="44" />
-          </Link>
           <Link
             to="/ma-selection"
             className="header__selection"

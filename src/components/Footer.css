@@ -36,9 +36,10 @@
 
 .footer__citation {
   margin: 0 0 12px;
+  text-align: center;
   font-family: var(--police-titre);
   font-size: clamp(40px, calc(72 * var(--u)), 72px);
-  line-height: 1;
+  line-height: 1.4;
 }
 
 
