@@ -14,6 +14,15 @@ const CERCLE = [0.76, 1]
 const ZOOM = [0.12, 0.85]
 const TOUCHES = ['ArrowDown', 'PageDown', ' ', 'Spacebar']
 
+const CLE_SON = 'premier-role-son'
+const sonCoupe = () => {
+  try {
+    return sessionStorage.getItem(CLE_SON) === 'off'
+  } catch {
+    return false
+  }
+}
+
 const borne = (v) => Math.min(1, Math.max(0, v))
 const plage = (p, [a, b]) => borne((p - a) / (b - a))
 const douceur = (x) => 0.5 - 0.5 * Math.cos(Math.PI * x)
@@ -22,7 +31,7 @@ export default function MonteeMarches() {
   const section = useRef(null)
   const canvas = useRef(null)
   const video = useRef(null)
-  const [son, setSon] = useState(true)
+  const [son, setSon] = useState(() => !sonCoupe())
   const [etat, setEtat] = useState('repos')
 
   useEffect(() => {
@@ -115,6 +124,12 @@ export default function MonteeMarches() {
       }
       if (t >= CERCLE[0] + 0.04 && !enLecture) {
         enLecture = true
+        if (sonCoupe()) {
+          v.muted = true
+          setSon(false)
+          v.play().catch(() => {})
+          return
+        }
         v.muted = false
         v.play()
           .then(() => setSon(true))
@@ -300,6 +315,11 @@ export default function MonteeMarches() {
     v.muted = !v.muted
     if (!v.muted) v.play().catch(() => {})
     setSon(!v.muted)
+    try {
+      sessionStorage.setItem(CLE_SON, v.muted ? 'off' : 'on')
+    } catch {
+      return
+    }
   }
 
   return (
