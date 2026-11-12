@@ -84,7 +84,7 @@ export default function Piece() {
             </button>
           </div>
 
-          <p className="produit__solidaire">100 % des bénéfices reversés au Collectif 50/50 et à l’AAFA</p>
+          <p className="produit__solidaire">100 % des bénéfices reversés à quatre associations pour l’inclusion dans l’audiovisuel</p>
 
           <div className="produit__details">
             <details open>

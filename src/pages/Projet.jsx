@@ -9,11 +9,11 @@ const barrages = [
 ]
 
 const programme = [
-  ['Janvier', 'Le casting', 'Avec le Collectif 50/50 et l’AAFA'],
-  ['Février', 'Les rencontres', 'Les personnes avant les tenues'],
-  ['Avril', 'Les essayages', 'Seconde main, ajustée à chaque corps'],
-  ['Soir d’ouverture', 'Le défilé', 'Sur les marches du Palais'],
-  ['Pendant le festival', 'La vente solidaire', '100 % des bénéfices reversés'],
+  ['Février · J-3 mois', 'Le teaser', 'Un premier visuel sur les réseaux des deux marques'],
+  ['Mars · J-2 mois', 'La vidéo', 'Un premier aperçu de la collaboration'],
+  ['Avril → début mai', 'Les affiches', 'Visuels de présentation et affiches des égéries'],
+  ['11 mai 2027', 'Le défilé', 'Sur les marches du Palais, flyer et spot sur les écrans'],
+  ['Après le défilé', 'La vente solidaire', 'Pop-up à Paris et en ligne, 100 % reversés'],
 ]
 
 export default function Projet() {
@@ -63,7 +63,7 @@ export default function Projet() {
           <div className="programme__entete">
             <p className="rubrique">Le déroulé</p>
             <h2 className="programme__titre" id="programme-titre">
-              Du casting à la Croisette
+              De février au 11 mai
             </h2>
           </div>
           <ol className="programme__liste">

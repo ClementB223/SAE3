@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="hero__milieu">
         <div className="hero__gauche">
         <p className="hero__intro">
-          <span className="hero__signature">Festival de Cannes × Vestiaire Collective · 2027</span>
+          <span className="hero__signature">Festival de Cannes × Vestiaire Collective · 11 mai 2027</span>
           Trois égéries ouvrent le festival sur le tapis rouge, dans des tenues entièrement composées de pièces de luxe de
           seconde main.
         </p>

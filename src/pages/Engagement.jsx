@@ -6,7 +6,6 @@ import './Engagement.css'
 const chapitres = [
   {
     id: 'constat',
-    numero: '01',
     titre: 'Le constat',
     textes: [
       'Sur les marches de Cannes, le luxe ne parle qu’à un seul corps. Les pièces de défilé sont pensées pour une taille 36, des silhouettes debout et des morphologies qui se ressemblent toutes. Celles et ceux qui sortent de ce cadre doivent faire sans, ou ne pas venir.',
@@ -15,20 +14,18 @@ const chapitres = [
   },
   {
     id: 'seconde-main',
-    numero: '02',
     titre: 'Le choix de la seconde main',
     textes: [
       'Chaque pièce du défilé existe déjà. Elle a été portée, aimée, puis confiée à Vestiaire Collective par celles et ceux qui l’ont achetée. Nous ne faisons rien fabriquer : nous faisons circuler.',
-      'Ce choix nous permet de proposer des coupes et des tailles que les collections neuves oublient, du 38 au 56, et d’adapter certaines pièces aux besoins de chacun : taille élastique, fermetures faciles, pantalons pensés pour la position assise.',
+      'Ce choix nous permet de proposer des coupes et des tailles que les collections neuves oublient, du 38 au 52, et d’adapter certaines pièces aux besoins de chacun : taille élastique, fermetures faciles, pantalons pensés pour la position assise.',
       'Chaque pièce est contrôlée et authentifiée par les équipes de Vestiaire Collective avant d’être remise en vente.',
     ],
   },
   {
     id: 'associations',
-    numero: '03',
     titre: 'Où va l’argent',
     textes: [
-      'Après le défilé, toutes les pièces sont mises en vente sur Vestiaire Collective. La totalité des bénéfices est reversée à deux associations qui travaillent, toute l’année, à ouvrir le cinéma à celles et ceux qu’il laisse encore de côté.',
+      'Après le défilé, toutes les pièces sont mises en vente sur Vestiaire Collective. La totalité des bénéfices est reversée à quatre associations qui travaillent, toute l’année, à ouvrir le cinéma à celles et ceux qu’il laisse encore de côté.',
     ],
     associations: [
       {
@@ -39,25 +36,34 @@ const chapitres = [
       {
         nom: 'AAFA',
         texte:
-          'L’association des actrices et acteurs de France défend tous les profils d’interprètes. Votre achat finance des castings ouverts à tous les corps, tous les âges et toutes les situations de handicap.',
+          'Actrices et Acteurs de France Associés défend tous les profils d’interprètes. Votre achat finance des castings ouverts à tous les corps, tous les âges et toutes les situations de handicap.',
+      },
+      {
+        nom: 'Divé+',
+        texte:
+          'Elle accompagne la diversité et l’inclusion dans l’audiovisuel, devant et derrière la caméra. Votre achat finance l’accompagnement de jeunes talents vers les métiers du cinéma.',
+      },
+      {
+        nom: 'Ciné-ma différence',
+        texte:
+          'Elle organise des séances de cinéma adaptées aux personnes en situation de handicap. Votre achat finance de nouvelles séances, partout en France.',
       },
     ],
   },
   {
     id: 'conciergerie',
-    numero: '04',
-    titre: 'Sur la Croisette',
+    titre: 'Après le défilé',
     textes: [
-      'Pendant les douze jours du festival, un pop-up solidaire s’installe sur la Croisette. On y essaie les pièces du défilé, on y rencontre celles et ceux qui les ont portées, et on peut repartir avec.',
-      'À côté, une conciergerie inclusive accueille chaque accrédité qui n’a pas trouvé sa tenue. Sélection, essayage et retouches y sont faits sur place et sans frais, pour que personne ne renonce à monter les marches faute d’une tenue à sa taille.',
+      'Après le 11 mai, les tenues du défilé partent dans un pop-up store à Paris et en ligne sur le site de Vestiaire Collective. On y essaie les pièces, on y rencontre celles et ceux qui les ont portées, et on peut repartir avec.',
+      'Pendant le festival, une conciergerie inclusive accueille sur la Croisette chaque accrédité qui n’a pas trouvé sa tenue. Sélection, essayage et retouches y sont faits sur place et sans frais, pour que personne ne renonce à monter les marches faute d’une tenue à sa taille.',
     ],
   },
 ]
 
 const promesses = [
   'Aucune pièce neuve fabriquée pour le défilé.',
-  'Toutes les tailles, du 38 au 56, et des pièces adaptées aux corps en situation de handicap.',
-  '100 % des bénéfices reversés au Collectif 50/50 et à l’AAFA.',
+  'Toutes les tailles, du 38 au 52, et des pièces adaptées aux corps en situation de handicap.',
+  '100 % des bénéfices reversés à quatre associations pour l’inclusion dans l’audiovisuel.',
   'Des égéries choisies pour ce qu’elles portent à l’écran, pas pour leur taille.',
   'Une conciergerie gratuite ouverte à tous les accrédités du festival.',
 ]
@@ -83,7 +89,7 @@ export default function Engagement() {
       <section className="engage-manifeste" aria-label="Manifeste">
         <p className="engage-manifeste__texte">
           Le Premier Rôle est né d’une conviction simple : le luxe n’a de sens que s’il peut être porté par tout le monde. Pour
-          l’ouverture du Festival de Cannes, Vestiaire Collective habille trois égéries et des participants de toutes les
+          l’ouverture du Festival de Cannes, le 11 mai 2027, Vestiaire Collective habille trois égéries et des participants de toutes les
           morphologies, uniquement avec des pièces de seconde main.
         </p>
         <div className="engage-manifeste__colonnes">
@@ -107,7 +113,6 @@ export default function Engagement() {
         {chapitres.map((c) => (
           <section className="chapitre" id={c.id} key={c.id} aria-labelledby={`${c.id}-titre`}>
             <div className="chapitre__tete">
-              <span className="chapitre__numero">{c.numero}</span>
               <h2 className="chapitre__titre" id={`${c.id}-titre`}>
                 {c.titre}
               </h2>

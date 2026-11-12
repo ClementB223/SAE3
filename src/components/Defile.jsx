@@ -22,7 +22,7 @@ export default function Defile() {
           <em className="defile__titre2">Zéro pièce neuve</em>
         </h2>
         <p className="defile__para defile__para--lettrine">
-          Le soir de l’ouverture, Winnie Harlow, Abdé Maziane et Peter Dinklage montent les marches. La mode, la scène et la
+          Le soir de l’ouverture, le 11 mai 2027, Winnie Harlow, Abdé Maziane et Peter Dinklage montent les marches. La mode, la scène et la
           haute couture s’ouvrent à tous.
         </p>
         <p className="defile__para defile__para--gris">

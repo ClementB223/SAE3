@@ -14,6 +14,20 @@ const besoinsGroupes = {
 }
 const adaptations = Object.keys(besoinsGroupes)
 
+const silhouettes = {
+  'Jusqu’au 42': [0, 42],
+  '44 à 48': [44, 48],
+  '50 et plus': [50, 99],
+}
+
+const vaA = (piece, silhouette) => {
+  if (piece.taille === 'TU') return true
+  const t = piece.taille.match(/^T\. (\d+)/)
+  if (!t) return false
+  const [min, max] = silhouettes[silhouette]
+  return Number(t[1]) >= min && Number(t[1]) <= max
+}
+
 const normaliser = (t) =>
   t
     .normalize('NFD')
@@ -42,6 +56,7 @@ export default function Catalogue() {
   const [recherche, setRecherche] = useState('')
   const [categorie, setCategorie] = useState('')
   const [look, setLook] = useState('')
+  const [silhouette, setSilhouette] = useState('')
   const [besoins, setBesoins] = useState([])
   const [disponibles, setDisponibles] = useState(false)
   const champ = useRef(null)
@@ -57,18 +72,20 @@ export default function Catalogue() {
     return pieces.filter((p) => {
       if (q && !normaliser(`${p.marque} ${p.nom} ${p.couleur} ${p.matiere}`).includes(q)) return false
       if (categorie && p.categorie !== categorie) return false
+      if (silhouette && !vaA(p, silhouette)) return false
       if (look && p.look !== look) return false
       if (besoins.some((b) => !besoinsGroupes[b].some((a) => p.adaptations.includes(a)))) return false
       if (disponibles && p.statut !== 'disponible') return false
       return true
     })
-  }, [recherche, categorie, look, besoins, disponibles])
+  }, [recherche, categorie, look, silhouette, besoins, disponibles])
 
-  const actifs = recherche || categorie || look || besoins.length || disponibles
-  const nbFiltres = [categorie, look, disponibles].filter(Boolean).length + besoins.length + (recherche ? 1 : 0)
+  const actifs = recherche || categorie || look || silhouette || besoins.length || disponibles
+  const nbFiltres = [categorie, look, silhouette, disponibles].filter(Boolean).length + besoins.length + (recherche ? 1 : 0)
   const reinitialiser = () => {
     setRecherche('')
     setCategorie('')
+    setSilhouette('')
     setLook('')
     setBesoins([])
     setDisponibles(false)
@@ -93,7 +110,7 @@ export default function Catalogue() {
           </h1>
         </div>
         <p className="entete-page__chapeau">
-          {pieces.length} pièces de seconde main, du 38 au 56 : celles portées sur les marches et toute la vente solidaire. Filtrez par
+          {pieces.length} pièces de seconde main, du 38 au 52 : celles portées sur les marches et toute la vente solidaire. Filtrez par
           besoin d’accessibilité : 100 % des bénéfices sont reversés à l’inclusion dans l’audiovisuel.
         </p>
       </header>
@@ -126,6 +143,8 @@ export default function Catalogue() {
           </div>
 
           <Puces legende="Catégorie" options={categories} valeur={categorie} changer={setCategorie} />
+
+          <Puces legende="Morphologie · ma taille" options={Object.keys(silhouettes)} valeur={silhouette} changer={setSilhouette} />
 
           <div className="filtre">
             <label className="filtre__legende" htmlFor="look">

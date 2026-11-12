@@ -12,7 +12,8 @@
 }
 
 .engage-tete__titre span {
-  font-size: clamp(44px, calc(104 * var(--u)), 104px);
+  font-size: calc(90 * var(--u));
+  white-space: nowrap;
   line-height: 0.95;
   text-transform: uppercase;
 }
@@ -54,6 +55,7 @@
 
 .engage-photo {
   margin: 0 0 calc(120 * var(--u));
+  overflow: hidden;
 }
 
 .engage-photo img {
@@ -91,12 +93,6 @@
   gap: 10px;
 }
 
-.chapitre__numero {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  color: var(--rouge);
-}
 
 .chapitre__titre {
   margin: 0;
@@ -166,26 +162,16 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: promesse;
 }
 
 .promesses__liste li {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
   padding: 18px 0;
   border-bottom: 1px solid var(--or);
   font-size: 18px;
   line-height: 1.5;
-  counter-increment: promesse;
 }
 
-.promesses__liste li::before {
-  content: counter(promesse, decimal-leading-zero);
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 2.1;
-  color: var(--or);
-}
 
 .engage-fin {
   display: flex;
@@ -216,6 +202,10 @@
 @media (max-width: 720px) {
   .engage-tete {
     padding-bottom: 40px;
+  }
+
+  .engage-tete__titre span {
+    font-size: 6.6vw;
   }
 
   .engage-manifeste {
