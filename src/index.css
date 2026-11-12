@@ -126,11 +126,6 @@ img {
   display: flex;
   align-items: flex-start;
   padding-top: 18px;
-  border-top: 1px solid var(--noir);
-}
-
-.filet--clair {
-  border-color: var(--blanc);
 }
 
 .rubrique {

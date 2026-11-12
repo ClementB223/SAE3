@@ -330,7 +330,7 @@ export const barrieres = [
     chiffre: 'Des milliers',
     legende: 'd’étudiants, de techniciens et de cinéphiles accrédités chaque année',
     texte:
-      'Étudiants de La Cinef, techniciens, spectateurs de Cannes Cinéphiles : ils obtiennent une place au Grand Théâtre Lumière. Mais le protocole impose une tenue de gala, et beaucoup renoncent à monter les marches ou s’endettent pour louer une tenue conforme.',
+      'Étudiants de La Cinef, techniciens et cinéphiles ont leur place au Grand Théâtre Lumière. Mais la tenue de gala coûte cher : certains renoncent ou s’endettent pour en louer une.',
   },
   {
     numero: '02',
@@ -338,7 +338,7 @@ export const barrieres = [
     chiffre: '80 %',
     legende: 'des morphologies exclues des prototypes de défilé',
     texte:
-      'Les maisons présentes sur la Croisette ne prêtent que des prototypes en taille 34 ou 36. En 2024, la polémique autour de la montée des marches d’Un p’tit truc en plus a montré un système qui peine à habiller les corps atypiques, âgés ou en situation de handicap.',
+      'Sur la Croisette, les maisons prêtent surtout des prototypes en tailles 34 et 36. Les corps atypiques, âgés ou en situation de handicap restent peu représentés.',
   },
   {
     numero: '03',
@@ -346,7 +346,7 @@ export const barrieres = [
     chiffre: '1 entrée',
     legende: 'latérale pour les personnes à mobilité réduite',
     texte:
-      'Le Palais est équipé d’ascenseurs et de boucles magnétiques. Mais les personnes à mobilité réduite rejoignent les salles par une entrée secondaire, privées du rituel central : la montée du tapis rouge face aux photographes.',
+      'Le Palais dispose d’ascenseurs et de boucles magnétiques, mais l’accès PMR passe par une entrée secondaire, loin du tapis rouge et des photographes.',
   },
 ]
 

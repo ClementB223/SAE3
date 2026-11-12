@@ -23,13 +23,12 @@ export default function Defile() {
           <em className="defile__titre2">Zéro pièce neuve</em>
         </h2>
         <p className="defile__para defile__para--lettrine">
-          Le soir de l’ouverture, quatre professionnels du cinéma montent les marches avant les premières projections. Une scripte,
-          un chef opérateur, une monteuse, un·e comédien·ne : des métiers, des corps et des parcours que le tapis rouge montre
-          trop rarement. Avant de découvrir leur tenue, on découvre qui ils sont.
+          Le soir de l’ouverture, quatre professionnels du cinéma montent les marches. Leurs métiers et leurs parcours, trop
+          rarement visibles sur le tapis rouge, sont à découvrir.
         </p>
         <p className="defile__para defile__para--gris">
-          Les tenues ont été choisies avec eux dans le catalogue de seconde main de Vestiaire Collective, puis ajustées à leur
-          corps. Après le défilé, chaque pièce est vendue au profit d’associations pour l’inclusion dans l’audiovisuel.
+          Choisies avec eux en seconde main chez Vestiaire Collective, leurs tenues sont ajustées puis vendues au profit
+          d’associations pour l’inclusion dans l’audiovisuel.
         </p>
         <Link className="lien" to="/le-projet#deroule">
           Le déroulé du projet →
