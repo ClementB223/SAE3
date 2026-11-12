@@ -41,11 +41,13 @@
 
 .pieces__grille {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 48px 0 0;
   padding: 0;
   list-style: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .pieces__note strong {
