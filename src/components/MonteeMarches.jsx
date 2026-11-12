@@ -132,11 +132,6 @@ export default function MonteeMarches() {
           </p>
         </div>
 
-        <p className="montee__message">
-          <span className="montee__message-ligne">Pour certains, ces marches restent infranchissables.</span>
-          <span className="montee__message-accent">Cette année, le premier rôle appartient à tous les corps</span>
-        </p>
-
         <div className="montee__noir" aria-hidden="true" />
 
         <div className="montee__salle">

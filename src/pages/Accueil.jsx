@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
-import BandeDefilante from '../components/BandeDefilante.jsx'
 import Defile from '../components/Defile.jsx'
 import Looks from '../components/Looks.jsx'
 import Manifeste from '../components/Manifeste.jsx'
@@ -12,7 +11,6 @@ export default function Accueil() {
   return (
     <>
       <Hero />
-      <BandeDefilante />
       <Defile />
       <Looks />
       <Manifeste />

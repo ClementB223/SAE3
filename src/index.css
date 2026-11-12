@@ -172,3 +172,7 @@ img {
 [id] {
   scroll-margin-top: 90px;
 }
+
+em{
+  font-style: normal;
+}
