@@ -59,6 +59,7 @@ export default function MonteeMarches() {
       dessiner(Math.round(borne(p / FIN_MONTEE) * (FRAMES - 1)))
       el.style.setProperty('--p', p.toFixed(4))
       el.style.setProperty('--titre', (1 - borne(p / 0.096)).toFixed(3))
+      el.style.setProperty('--message', Math.min(plage(p, [0.16, 0.24]), 1 - plage(p, [0.4, 0.48])).toFixed(3))
       el.style.setProperty('--fondu', plage(p, NOIR).toFixed(3))
       el.style.setProperty('--cercle', plage(p, CERCLE).toFixed(3))
       el.style.setProperty('--approche', plage(p, ZOOM).toFixed(4))
@@ -130,6 +131,11 @@ export default function MonteeMarches() {
             <span className="montee__trait" aria-hidden="true" />
           </p>
         </div>
+
+        <p className="montee__message">
+          <span className="montee__message-ligne">Pour certains, ces marches restent infranchissables.</span>
+          <span className="montee__message-accent">Cette année, le premier rôle appartient à tous les corps</span>
+        </p>
 
         <div className="montee__noir" aria-hidden="true" />
 

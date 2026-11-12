@@ -1,44 +1,23 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import logoNoir from '../assets/logo/logo-collab-noir.png'
 import logoBlanc from '../assets/logo/logo-collab.png'
 import iconeRecherche from '../assets/figma/recherche.svg'
 import iconeCoeur from '../assets/figma/coeur.svg'
+import { useSelection } from '../selection-contexte.js'
 import './Header.css'
 
 const liens = [
-  { libelle: 'Accueil', href: '#accueil' },
-  { libelle: 'Le défilé', href: '#defile' },
-  { libelle: 'Les looks', href: '#looks' },
-  { libelle: 'Notre engagement', href: '#engagement' },
+  { libelle: 'Accueil', href: '/', fin: true },
+  { libelle: 'Le projet', href: '/le-projet' },
+  { libelle: 'Le casting', href: '/le-casting' },
+  { libelle: 'Les pièces', href: '/pieces' },
+  { libelle: 'Notre engagement', href: '/engagement' },
 ]
 
-const secondaires = [
-  { libelle: 'Shop the look', href: '#shop' },
-  { libelle: 'Les pièces', href: '#pieces' },
-]
-
-function useSectionActive() {
-  const [actif, setActif] = useState('#accueil')
-
-  useEffect(() => {
-    const cibles = [...liens, ...secondaires].map((l) => document.querySelector(l.href)).filter(Boolean)
-    const observateur = new IntersectionObserver(
-      (entrees) => {
-        entrees.forEach((e) => {
-          if (e.isIntersecting) setActif(`#${e.target.id}`)
-        })
-      },
-      { rootMargin: '-45% 0px -50% 0px' },
-    )
-    cibles.forEach((c) => observateur.observe(c))
-    return () => observateur.disconnect()
-  }, [])
-
-  return actif
-}
-
-export default function Header({ selection = 2, superpose = false }) {
-  const actif = useSectionActive()
+export default function Header({ superpose = false }) {
+  const { slugs } = useSelection()
+  const selection = slugs.length
   const idMenu = useId()
   const [ouvert, setOuvert] = useState(false)
   const bouton = useRef(null)
@@ -70,29 +49,33 @@ export default function Header({ selection = 2, superpose = false }) {
   return (
     <header className={`header${superpose ? ' header--superpose' : ''}${ouvert ? ' header--ouvert' : ''}`}>
       <div className="header__barre">
-        <a className="header__logos" href="#accueil" aria-label="Festival de Cannes × Vestiaire Collective, accueil">
+        <Link className="header__logos" to="/" aria-label="Le Premier Rôle, Festival de Cannes × Vestiaire Collective, accueil">
           <img className="header__logo" src={superpose ? logoBlanc : logoNoir} alt="" width="48" height="42" />
-        </a>
+        </Link>
 
         <nav className="header__nav" aria-label="Navigation principale">
-          {liens.map(({ libelle, href }) => (
-            <a key={href} href={href} className="header__lien" aria-current={href === actif ? 'true' : undefined}>
+          {liens.map(({ libelle, href, fin }) => (
+            <NavLink key={href} to={href} end={fin} className="header__lien">
               {libelle}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
         <div className="header__actions">
-          <button type="button" className="header__recherche" aria-label="Rechercher">
+          <Link to="/pieces#recherche" className="header__recherche" aria-label="Rechercher une pièce">
             <img src={iconeRecherche} alt="" width="44" height="44" />
-          </button>
-          <button type="button" className="header__selection" aria-label={`Ma sélection, ${selection} pièces`}>
+          </Link>
+          <Link
+            to="/ma-selection"
+            className="header__selection"
+            aria-label={`Ma sélection, ${selection} pièce${selection > 1 ? 's' : ''}`}
+          >
             <img src={iconeCoeur} alt="" width="20" height="20" />
             <span className="header__selection-texte">Sélection ({selection})</span>
             <span className="header__selection-nombre" aria-hidden="true">
               {selection}
             </span>
-          </button>
+          </Link>
           <button
             type="button"
             ref={bouton}
@@ -111,26 +94,29 @@ export default function Header({ selection = 2, superpose = false }) {
       <div className="menu" id={idMenu} ref={panneau} hidden={!ouvert}>
         <nav className="menu__nav" aria-label="Menu">
           <ul className="menu__liste">
-            {liens.map(({ libelle, href }, i) => (
+            {liens.map(({ libelle, href, fin }, i) => (
               <li key={href} style={{ '--i': i }}>
-                <a href={href} className="menu__lien" aria-current={href === actif ? 'true' : undefined} onClick={fermer}>
+                <NavLink to={href} end={fin} className="menu__lien" onClick={fermer}>
                   <span className="menu__numero">0{i + 1}</span>
                   {libelle}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
           <ul className="menu__secondaires">
-            {secondaires.map(({ libelle, href }) => (
-              <li key={href}>
-                <a href={href} className="lien lien--clair" onClick={fermer}>
-                  {libelle} →
-                </a>
-              </li>
-            ))}
+            <li>
+              <Link to="/ma-selection" className="lien lien--clair" onClick={fermer}>
+                Ma sélection ({selection}) →
+              </Link>
+            </li>
+            <li>
+              <Link to="/pieces#recherche" className="lien lien--clair" onClick={fermer}>
+                Rechercher une pièce →
+              </Link>
+            </li>
           </ul>
         </nav>
-        <p className="menu__devise">Seconde main, premier rôle</p>
+        <p className="menu__devise">Le premier rôle appartient à tous les corps</p>
       </div>
     </header>
   )

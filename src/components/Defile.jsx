@@ -1,4 +1,5 @@
 import photoDefile from '../assets/figma/photo-defile.webp'
+import { Link } from 'react-router-dom'
 import './Defile.css'
 
 export default function Defile() {
@@ -16,22 +17,23 @@ export default function Defile() {
       </figure>
 
       <div className="defile__texte">
-        <p className="rubrique">Le défilé</p>
+        <p className="rubrique">Le défilé d’ouverture</p>
         <h2 className="defile__titre" id="defile-titre">
           <span className="defile__titre1">Quatre silhouettes</span>
           <em className="defile__titre2">Zéro pièce neuve</em>
         </h2>
         <p className="defile__para defile__para--lettrine">
-          Le soir de l’ouverture, avant les premières projections, quatre silhouettes montent les marches. Pas d’égéries, pas de
-          tenues prêtées : des personnes aux parcours, aux corps et aux histoires variés, habillées de pièces qui ont déjà vécu.
+          Le soir de l’ouverture, quatre professionnels du cinéma montent les marches avant les premières projections. Une scripte,
+          un chef opérateur, une monteuse, un·e comédien·ne : des métiers, des corps et des parcours que le tapis rouge montre
+          trop rarement. Avant de découvrir leur tenue, on découvre qui ils sont.
         </p>
         <p className="defile__para defile__para--gris">
-          Chaque vêtement porté ce soir-là vient de la communauté Vestiaire Collective. Après le défilé, il retrouve sa place sur la
-          plateforme, prêt pour une nouvelle histoire.
+          Les tenues ont été choisies avec eux dans le catalogue de seconde main de Vestiaire Collective, puis ajustées à leur
+          corps. Après le défilé, chaque pièce est vendue au profit d’associations pour l’inclusion dans l’audiovisuel.
         </p>
-        <a className="lien" href="#looks">
-          Explorer le défilé →
-        </a>
+        <Link className="lien" to="/le-projet#deroule">
+          Le déroulé du projet →
+        </Link>
       </div>
     </section>
   )

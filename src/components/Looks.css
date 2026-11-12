@@ -114,6 +114,16 @@
   line-height: 1.2;
 }
 
+.look__metier {
+  display: block;
+  margin-top: 2px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rouge);
+}
+
 .look__resume {
   font-weight: 500;
   font-size: 14px;

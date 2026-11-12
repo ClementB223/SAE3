@@ -1,0 +1,169 @@
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { participants, pieces } from '../donnees.js'
+import PieceCarte from '../components/PieceCarte.jsx'
+import './pages.css'
+import './Catalogue.css'
+
+const categories = ['Vêtements', 'Chaussures', 'Accessoires']
+const coupes = [...new Set(pieces.map((p) => p.coupe))]
+const adaptations = [...new Set(pieces.flatMap((p) => p.adaptations))].sort((a, b) => a.localeCompare(b, 'fr'))
+
+const normaliser = (t) =>
+  t
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+
+function Puces({ legende, options, valeur, changer }) {
+  return (
+    <fieldset className="filtre">
+      <legend className="filtre__legende">{legende}</legend>
+      <div className="filtre__puces">
+        {['Tout', ...options].map((o) => {
+          const choisi = o === 'Tout' ? valeur === '' : valeur === o
+          return (
+            <button type="button" key={o} className="puce" aria-pressed={choisi} onClick={() => changer(o === 'Tout' ? '' : o)}>
+              {o}
+            </button>
+          )
+        })}
+      </div>
+    </fieldset>
+  )
+}
+
+export default function Catalogue() {
+  const [recherche, setRecherche] = useState('')
+  const [categorie, setCategorie] = useState('')
+  const [look, setLook] = useState('')
+  const [coupe, setCoupe] = useState('')
+  const [besoins, setBesoins] = useState([])
+  const [disponibles, setDisponibles] = useState(false)
+
+  const resultats = useMemo(() => {
+    const q = normaliser(recherche.trim())
+    return pieces.filter((p) => {
+      if (q && !normaliser(`${p.marque} ${p.nom} ${p.couleur} ${p.matiere}`).includes(q)) return false
+      if (categorie && p.categorie !== categorie) return false
+      if (look && p.look !== look) return false
+      if (coupe && p.coupe !== coupe) return false
+      if (besoins.some((b) => !p.adaptations.includes(b))) return false
+      if (disponibles && p.statut !== 'disponible') return false
+      return true
+    })
+  }, [recherche, categorie, look, coupe, besoins, disponibles])
+
+  const actifs = recherche || categorie || look || coupe || besoins.length || disponibles
+  const reinitialiser = () => {
+    setRecherche('')
+    setCategorie('')
+    setLook('')
+    setCoupe('')
+    setBesoins([])
+    setDisponibles(false)
+  }
+  const basculerBesoin = (b) => setBesoins((l) => (l.includes(b) ? l.filter((x) => x !== b) : [...l, b]))
+
+  return (
+    <div className="page">
+      <ol className="fil" aria-label="Fil d’Ariane">
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li aria-current="page">Les pièces</li>
+      </ol>
+
+      <header className="entete-page">
+        <div>
+          <p className="rubrique">La vente solidaire</p>
+          <h1 className="entete-page__titre anim-titre">
+            <span className="entete-page__ligne">Les pièces</span>
+            <span className="entete-page__accent">du défilé</span>
+          </h1>
+        </div>
+        <p className="entete-page__chapeau">
+          Les {pieces.length} pièces portées sur les marches, toutes de seconde main et toutes uniques. Filtrez par coupe ou par
+          besoin d’accessibilité : 100 % des bénéfices sont reversés à l’inclusion dans l’audiovisuel.
+        </p>
+      </header>
+
+      <div className="catalogue">
+        <aside className="catalogue__filtres" aria-label="Filtres">
+          <div className="filtre">
+            <label className="filtre__legende" htmlFor="recherche">
+              Rechercher
+            </label>
+            <input
+              id="recherche"
+              className="champ"
+              type="search"
+              placeholder="Marque, pièce, couleur…"
+              value={recherche}
+              onChange={(e) => setRecherche(e.target.value)}
+            />
+          </div>
+
+          <Puces legende="Catégorie" options={categories} valeur={categorie} changer={setCategorie} />
+
+          <div className="filtre">
+            <label className="filtre__legende" htmlFor="look">
+              Look
+            </label>
+            <select id="look" className="champ" value={look} onChange={(e) => setLook(e.target.value)}>
+              <option value="">Tous les looks</option>
+              {participants.map((p) => (
+                <option value={p.slug} key={p.slug}>
+                  {p.look.titre} — {p.prenom}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <Puces legende="Coupe" options={coupes} valeur={coupe} changer={setCoupe} />
+
+          <fieldset className="filtre">
+            <legend className="filtre__legende">Accessibilité et confort</legend>
+            {adaptations.map((a) => (
+              <label className="case" key={a}>
+                <input type="checkbox" checked={besoins.includes(a)} onChange={() => basculerBesoin(a)} />
+                <span>{a}</span>
+              </label>
+            ))}
+          </fieldset>
+
+          <label className="case case--bascule">
+            <input type="checkbox" checked={disponibles} onChange={(e) => setDisponibles(e.target.checked)} />
+            <span>Disponibles uniquement</span>
+          </label>
+
+          {actifs ? (
+            <button type="button" className="lien catalogue__reinit" onClick={reinitialiser}>
+              Réinitialiser les filtres
+            </button>
+          ) : null}
+        </aside>
+
+        <section className="catalogue__resultats" aria-labelledby="resultats">
+          <p className="catalogue__compte" id="resultats" aria-live="polite">
+            {resultats.length} pièce{resultats.length > 1 ? 's' : ''}
+          </p>
+          {resultats.length ? (
+            <ul className="grille-pieces grille-pieces--3">
+              {resultats.map((p) => (
+                <PieceCarte piece={p} key={p.slug} />
+              ))}
+            </ul>
+          ) : (
+            <div className="vide">
+              <p>Aucune pièce ne correspond à ces critères pour le moment.</p>
+              <button type="button" className="bouton" onClick={reinitialiser}>
+                <span className="bouton__libelle">Voir toutes les pièces</span>
+              </button>
+            </div>
+          )}
+        </section>
+      </div>
+    </div>
+  )
+}

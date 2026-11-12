@@ -4,10 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const TITRES = '.defile__titre, .looks__titre, .manifeste__titre, .shop__titre, .pieces__titre, .footer__citation, .look__titre'
-const PHOTOS = '.defile__photo, .look__photo, .shop__photo, .piece__vignette, .footer__photo'
+const TITRES =
+  '.defile__titre, .looks__titre, .manifeste__titre, .shop__titre, .pieces__titre, .footer__citation, .look__titre, .anim-titre'
+const PHOTOS = '.defile__photo, .look__photo, .shop__photo, .piece__vignette, .footer__photo, .anim-photo'
 
-export function useApparitions() {
+export function useApparitions(cle) {
   useEffect(() => {
     const mm = gsap.matchMedia()
 
@@ -39,7 +40,7 @@ export function useApparitions() {
         )
       })
 
-      gsap.utils.toArray('.look__numero').forEach((numero) => {
+      gsap.utils.toArray('.look__numero, .anim-numero').forEach((numero) => {
         gsap.from(numero, {
           y: 50,
           opacity: 0,
@@ -51,12 +52,15 @@ export function useApparitions() {
       })
     })
 
-    const barre = ScrollTrigger.create({
-      trigger: '.manifeste__titre',
-      start: 'top 70%',
-      once: true,
-      onEnter: () => document.querySelector('.manifeste__titre')?.classList.add('est-visible'),
-    })
+    const titreManifeste = document.querySelector('.manifeste__titre')
+    const barre = titreManifeste
+      ? ScrollTrigger.create({
+          trigger: titreManifeste,
+          start: 'top 70%',
+          once: true,
+          onEnter: () => titreManifeste.classList.add('est-visible'),
+        })
+      : null
 
     const rafraichir = () => ScrollTrigger.refresh()
     window.addEventListener('load', rafraichir)
@@ -64,8 +68,8 @@ export function useApparitions() {
 
     return () => {
       window.removeEventListener('load', rafraichir)
-      barre.kill()
+      barre?.kill()
       mm.revert()
     }
-  }, [])
+  }, [cle])
 }

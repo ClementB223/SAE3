@@ -95,6 +95,27 @@
   margin-top: 128px;
 }
 
+.manifeste__intro {
+  max-width: 640px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.manifeste__chiffre {
+  font-family: var(--police-titre);
+  font-size: clamp(48px, calc(72 * var(--u)), 72px);
+  line-height: 0.9;
+}
+
+.manifeste__legende {
+  max-width: 280px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--blanc-doux);
+}
+
 .manifeste__intitule {
   margin: 0;
   font-family: var(--police-titre);

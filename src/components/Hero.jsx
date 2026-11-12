@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import photoGroupe from '../assets/figma/photo-groupe.webp'
@@ -27,16 +28,17 @@ export default function Hero() {
   return (
     <section ref={heroRef} className="hero" id="accueil" aria-labelledby="hero-titre">
       <h1 className="hero__titre" id="hero-titre">
-        <span className="hero__ligne1">Le tapis rouge </span>
+        <span className="hero__ligne1">Le premier rôle </span>
         <span className="hero__ligne2">
-          S’ouvre <em>à tous</em>
+          <em>à tous les corps</em>
         </span>
       </h1>
 
       <div className="hero__milieu">
         <p className="hero__intro">
-          Quatre personnes que l’on voit trop rarement sur les marches. Quatre tenues
-          entièrement composées de pièces de seconde main, à retrouver ici, une par une.
+          <span className="hero__signature">Festival de Cannes × Vestiaire Collective · 2027</span>
+          Quatre professionnels du cinéma, trop rarement invités au premier plan, ouvrent le festival sur le tapis
+          rouge. Leurs tenues sont entièrement composées de pièces de luxe de seconde main.
         </p>
         <img
           className="hero__photo"
@@ -49,11 +51,13 @@ export default function Hero() {
 
       <div className="hero__bas">
         <div className="hero__actions">
-          <a className="bouton" href="#looks">
-            <span className="bouton__libelle">Découvrir les looks</span>
+          <Link className="bouton" to="/le-casting">
+            <span className="bouton__libelle">Découvrir le casting</span>
             <span aria-hidden="true">→</span>
-          </a>
-          <a className="lien" href="#defile">Explorer le défilé</a>
+          </Link>
+          <Link className="lien" to="/le-projet">
+            Lire le projet
+          </Link>
         </div>
       </div>
     </section>

@@ -1,0 +1,254 @@
+.look-page__haut {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 24px;
+}
+
+.look-page__nav {
+  display: flex;
+  gap: 28px;
+}
+
+.look-page {
+  display: grid;
+  grid-template-columns: minmax(0, 783fr) minmax(0, 437fr);
+  gap: 48px calc(140 * var(--u));
+  align-items: start;
+  padding: calc(40 * var(--u)) 0 calc(110 * var(--u));
+}
+
+.look-page__visuel {
+  position: sticky;
+  top: 110px;
+}
+
+.look-page__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 783 / 979;
+  object-fit: cover;
+}
+
+.look-page__numero {
+  position: absolute;
+  left: -16px;
+  top: -0.5em;
+  font-family: var(--police-titre);
+  font-size: clamp(80px, calc(150 * var(--u)), 150px);
+  line-height: 1;
+  color: var(--rouge);
+}
+
+.look-page__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.look-page__titre {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+}
+
+.look-page__nom {
+  font-size: clamp(40px, calc(56 * var(--u)), 56px);
+  line-height: 1;
+}
+
+.look-page__look {
+  font-size: clamp(30px, calc(40 * var(--u)), 40px);
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--rouge);
+}
+
+.look-page__citation {
+  font-size: clamp(24px, calc(30 * var(--u)), 30px);
+}
+
+.look-page__portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.look-page__faits {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+}
+
+.look-page__faits div {
+  padding-top: 14px;
+  border-top: 1px solid var(--noir);
+}
+
+.look-page__faits dt {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.look-page__faits dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--noir-doux);
+}
+
+.look-page__liste {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--noir);
+  list-style: none;
+}
+
+.look-page__ligne {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--noir);
+  color: var(--noir);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.look-page__ligne:hover {
+  background: var(--or-voile);
+}
+
+.look-page__num {
+  width: 24px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.look-page__vignette {
+  flex-shrink: 0;
+  width: 60px;
+  height: 74px;
+  background: var(--or-voile);
+}
+
+.look-page__vignette img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.look-page__textes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.look-page__marque {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.look-page__piece {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.look-page__details {
+  font-size: 13px;
+  color: var(--noir-doux);
+}
+
+.look-page__prix {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.look-page__note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--noir-doux);
+}
+
+.autres-looks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.autre-look {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--noir);
+  text-decoration: none;
+}
+
+.autre-look__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.autre-look__metier {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rouge);
+}
+
+.autre-look__nom {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.autre-look__titre {
+  font-family: var(--police-titre);
+  font-size: 26px;
+}
+
+.autre-look:hover .autre-look__nom {
+  color: var(--orange);
+}
+
+@media (max-width: 900px) {
+  .look-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .look-page__visuel {
+    position: relative;
+    top: 0;
+  }
+
+  .look-page__numero {
+    left: 8px;
+  }
+
+  .autres-looks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,126 @@
+.catalogue {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  padding-bottom: calc(110 * var(--u));
+}
+
+.catalogue__filtres {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.filtre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.filtre__legende {
+  margin-bottom: 4px;
+  padding: 0;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.filtre__puces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.puce {
+  padding: 7px 14px;
+  border: 1px solid var(--noir);
+  border-radius: 999px;
+  background: var(--blanc);
+  font-family: var(--police-texte);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--noir);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.puce:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.puce[aria-pressed='true'] {
+  border-color: var(--noir);
+  background: var(--noir);
+  color: var(--blanc);
+}
+
+.champ {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--noir);
+  border-radius: 0;
+  background: var(--blanc);
+  font-family: var(--police-texte);
+  font-size: 15px;
+  color: var(--noir);
+}
+
+.champ:focus-visible {
+  outline-offset: 0;
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.case input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--rouge);
+}
+
+.case--bascule {
+  padding-top: 20px;
+  border-top: 1px solid var(--noir);
+  font-weight: 600;
+}
+
+.catalogue__reinit {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.catalogue__compte {
+  margin: 0 0 24px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .catalogue {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .catalogue__filtres {
+    position: static;
+    padding: 20px;
+    background: var(--or-voile);
+  }
+}

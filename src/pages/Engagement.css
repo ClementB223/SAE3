@@ -1,0 +1,118 @@
+.gestes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.geste {
+  padding-top: 20px;
+  border-top: 1px solid var(--noir);
+}
+
+.geste__numero {
+  font-family: var(--police-titre);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--rouge);
+}
+
+.geste__titre {
+  margin: 12px 0 10px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.associations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.association {
+  padding: 32px;
+  background: var(--or-voile);
+}
+
+.association__nom {
+  margin: 0 0 14px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(32px, calc(48 * var(--u)), 48px);
+}
+
+.engagement__precision {
+  max-width: 640px;
+  margin: 28px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--noir-doux);
+}
+
+.bloc-image {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 40px calc(80 * var(--u));
+  align-items: center;
+}
+
+.bloc-image--inverse .bloc-image__photo {
+  order: 2;
+}
+
+.bloc-image__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.bloc-image__titre {
+  margin: 0 0 20px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(36px, calc(56 * var(--u)), 56px);
+  line-height: 1;
+}
+
+.engagement__final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+
+.engagement__final .citation {
+  font-size: clamp(36px, calc(72 * var(--u)), 72px);
+}
+
+.bouton--clair {
+  background: var(--blanc);
+  color: var(--rouge);
+}
+
+.bouton--clair:hover {
+  background: var(--noir);
+  color: var(--blanc);
+}
+
+@media (max-width: 900px) {
+  .gestes,
+  .associations,
+  .bloc-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bloc-image--inverse .bloc-image__photo {
+    order: 0;
+  }
+
+  .association {
+    padding: 24px;
+  }
+}

@@ -48,124 +48,17 @@
   list-style: none;
 }
 
-.piece {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.piece__vignette {
-  position: relative;
-  aspect-ratio: 322 / 429;
-  overflow: hidden;
-  background: var(--or-voile);
-}
-
-.piece__image {
-  position: absolute;
-  inset: 7% 10%;
-  width: 80%;
-  height: 86%;
-  object-fit: contain;
-  transition: transform 0.4s;
-}
-
-.piece:hover .piece__image {
-  transform: scale(1.03);
-}
-
-.piece--vendue .piece__image {
-  opacity: 0.4;
-}
-
-.piece__badge {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  padding: 4px 8px;
-  background: var(--blanc);
-  font-weight: 500;
-  font-size: 13px;
-}
-
-.statut {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
+.pieces__note strong {
   font-weight: 600;
-  font-size: 14px;
+  color: var(--noir);
 }
 
-.statut__repere {
-  width: 10px;
-  height: 10px;
-  background: var(--noir);
-}
-
-.statut--reservee {
-  color: var(--orange);
-}
-
-.statut--reservee .statut__repere {
-  background: none;
-  border: 1.5px solid var(--orange);
-}
-
-.statut--vendue {
-  color: var(--rouge);
-}
-
-.statut--vendue .statut__repere {
-  height: 2px;
-  background: var(--rouge);
-}
-
-.piece__textes {
+.pieces__suite {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.piece__marque {
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.piece__nom {
-  margin: 0;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 1.25;
-}
-
-.piece__details {
-  font-size: 14px;
-  line-height: 1.4;
-  color: var(--noir-doux);
-}
-
-.piece__pied {
-  display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid var(--noir);
-}
-
-.piece__prix {
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1;
-  text-decoration: none;
-}
-
-del.piece__prix {
-  text-decoration: line-through;
-  color: var(--noir-doux);
+  gap: 20px 32px;
+  margin-top: 56px;
 }
 
 @media (max-width: 1100px) {
@@ -191,6 +84,6 @@ del.piece__prix {
   }
 
   .pieces__grille {
-    grid-template-columns: minmax(0, 1fr);
+    gap: 36px 12px;
   }
 }

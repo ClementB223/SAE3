@@ -1,0 +1,107 @@
+.casting {
+  margin: 0;
+  padding: 0 0 calc(110 * var(--u));
+  list-style: none;
+}
+
+.portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 48px calc(110 * var(--u));
+  align-items: center;
+  padding: calc(72 * var(--u)) 0;
+  border-top: 1px solid var(--noir);
+}
+
+.portrait--inverse .portrait__visuel {
+  order: 2;
+}
+
+.portrait__visuel {
+  position: relative;
+}
+
+.portrait__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.portrait__numero {
+  position: absolute;
+  left: -12px;
+  top: -0.55em;
+  font-family: var(--police-titre);
+  font-size: clamp(72px, calc(128 * var(--u)), 128px);
+  line-height: 1;
+  color: var(--rouge);
+}
+
+.portrait__texte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.portrait__nom {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(44px, calc(72 * var(--u)), 72px);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.portrait__citation {
+  color: var(--rouge);
+}
+
+.portrait__faits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  width: 100%;
+  margin: 0;
+}
+
+.portrait__faits div {
+  padding-top: 14px;
+  border-top: 1px solid var(--noir);
+}
+
+.portrait__faits dt {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.portrait__faits dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--noir-doux);
+}
+
+@media (max-width: 900px) {
+  .portrait {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 56px 0;
+  }
+
+  .portrait--inverse .portrait__visuel {
+    order: 0;
+  }
+
+  .portrait__numero {
+    left: 8px;
+  }
+
+  .portrait__faits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

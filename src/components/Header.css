@@ -59,7 +59,7 @@
   transition: background-color 0.2s;
 }
 
-.header__lien[aria-current]::after,
+.header__lien.active::after,
 .header__lien:hover::after {
   background: var(--rouge);
 }
@@ -79,6 +79,7 @@
   border: 0;
   background: none;
   color: var(--noir);
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -216,7 +217,7 @@
     text-decoration: none;
   }
 
-  .menu__lien[aria-current] {
+  .menu__lien.active {
     color: var(--or);
   }
 

@@ -1,0 +1,345 @@
+.fiche {
+  display: grid;
+  grid-template-columns: minmax(0, 764fr) minmax(0, 532fr);
+  gap: 48px calc(64 * var(--u));
+  align-items: start;
+  padding: calc(24 * var(--u)) 0 calc(110 * var(--u));
+}
+
+.fiche__galerie {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.fiche__vignette {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  padding: 8%;
+  background: var(--or-voile);
+}
+
+.fiche__vignette img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fiche__vignette--vendue img {
+  opacity: 0.4;
+}
+
+.fiche__porte {
+  margin: 0;
+}
+
+.fiche__porte img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.fiche__porte figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--noir-doux);
+}
+
+.fiche__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fiche__badge {
+  align-self: flex-start;
+  margin: 0;
+  padding: 6px 10px;
+  background: var(--noir);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+.fiche__marque {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.fiche__nom {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(36px, calc(52 * var(--u)), 52px);
+  line-height: 1;
+}
+
+.fiche__prix-statut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.fiche__prix {
+  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+del.fiche__prix {
+  color: var(--noir-doux);
+}
+
+.fiche__caracteristiques {
+  margin: 0;
+  border-top: 1px solid var(--noir);
+}
+
+.fiche__caracteristiques div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--noir);
+  font-size: 15px;
+}
+
+.fiche__caracteristiques dt {
+  color: var(--noir-doux);
+}
+
+.fiche__caracteristiques dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.fiche__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.fiche__acheter {
+  flex: 1;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.fiche__acheter:disabled {
+  background: var(--noir-doux);
+  cursor: not-allowed;
+}
+
+.fiche__favori {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid var(--noir);
+  background: var(--blanc);
+  color: var(--noir);
+  cursor: pointer;
+}
+
+.fiche__favori[aria-pressed='true'] {
+  color: var(--rouge);
+}
+
+.fiche__favori svg {
+  width: 22px;
+  height: 22px;
+}
+
+.fiche__note {
+  margin: -8px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--noir-doux);
+}
+
+.fiche__note a {
+  color: var(--noir);
+}
+
+.fiche__note a:hover {
+  color: var(--orange);
+}
+
+.fiche__arguments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fiche__arguments li {
+  padding-left: 22px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.fiche__arguments li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  background: var(--rouge);
+}
+
+.fiche__personne {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--noir);
+  color: var(--noir);
+  text-decoration: none;
+}
+
+.fiche__personne img {
+  flex-shrink: 0;
+  width: 96px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.fiche__personne > span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.fiche__personne .rubrique-petite {
+  margin: 0;
+}
+
+.fiche__personne-nom {
+  font-family: var(--police-titre);
+  font-size: 28px;
+}
+
+.fiche__personne-metier {
+  font-size: 14px;
+  color: var(--noir-doux);
+}
+
+.fiche__personne:hover .lien {
+  color: var(--orange);
+}
+
+.achat {
+  width: min(600px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  background: var(--blanc);
+  color: var(--noir);
+}
+
+.achat::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.achat__fenetre {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+}
+
+.achat__haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.achat__haut .rubrique-petite {
+  margin: 0;
+}
+
+.achat__fermer {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--noir);
+  cursor: pointer;
+}
+
+.achat__titre {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.achat__recap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: var(--or-voile);
+}
+
+.achat__vignette {
+  flex-shrink: 0;
+  width: 76px;
+  height: 92px;
+}
+
+.achat__vignette img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.achat__textes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.achat__textes .fiche__marque {
+  margin: 0;
+  font-size: 12px;
+}
+
+.achat__nom {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.achat__prix {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .fiche {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .achat__fenetre {
+    padding: 24px;
+  }
+}

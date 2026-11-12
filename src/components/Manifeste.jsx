@@ -1,28 +1,13 @@
+import { Link } from 'react-router-dom'
+import { barrieres } from '../donnees.js'
 import './Manifeste.css'
-
-const engagements = [
-  {
-    titre: 'Représenter autrement',
-    texte:
-      'Mettre en lumière des personnes trop rarement vues dans les univers du luxe et du tapis rouge, pour leur style et leur histoire, pas pour leur différence.',
-  },
-  {
-    titre: 'Donner une seconde vie aux vêtements',
-    texte: 'Une tenue de prestige n’a pas besoin d’être neuve. Chaque pièce du défilé existait déjà, et continue son chemin avec vous.',
-  },
-  {
-    titre: 'Faire évoluer les codes du prestige',
-    texte: 'Le style et l’élégance ne sont réservés à personne. Le tapis rouge non plus.',
-    lien: 'Lire notre engagement →',
-  },
-]
 
 export default function Manifeste() {
   return (
     <section className="manifeste" id="engagement" aria-labelledby="manifeste-titre">
       <div className="manifeste__contenu">
         <div className="filet filet--clair">
-          <p className="rubrique rubrique--clair">Notre engagement</p>
+          <p className="rubrique rubrique--clair">Pourquoi Le Premier Rôle</p>
         </div>
 
         <h2 className="manifeste__titre" id="manifeste-titre">
@@ -36,15 +21,22 @@ export default function Manifeste() {
           </span>
         </h2>
 
+        <p className="manifeste__intro">
+          Le cinéma raconte la vie dans toute sa diversité. Pourtant, au pied des 24 marches, trois barrières tiennent encore
+          à l’écart une partie de celles et ceux qui le font vivre.
+        </p>
+
         <ul className="manifeste__engagements">
-          {engagements.map((e) => (
-            <li className="manifeste__engagement" key={e.titre}>
-              <h3 className="manifeste__intitule">{e.titre}</h3>
-              <p className="manifeste__texte">{e.texte}</p>
-              {e.lien && (
-                <a className="lien lien--clair" href="#engagement">
-                  {e.lien}
-                </a>
+          {barrieres.map((b, i) => (
+            <li className="manifeste__engagement" key={b.titre}>
+              <span className="manifeste__chiffre">{b.chiffre}</span>
+              <span className="manifeste__legende">{b.legende}</span>
+              <h3 className="manifeste__intitule">{b.titre}</h3>
+              <p className="manifeste__texte">{b.texte}</p>
+              {i === barrieres.length - 1 && (
+                <Link className="lien lien--clair" to="/le-projet#barrieres">
+                  Comprendre les trois barrières →
+                </Link>
               )}
             </li>
           ))}

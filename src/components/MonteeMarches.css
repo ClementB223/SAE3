@@ -2,6 +2,7 @@
   --p: 0;
   --titre: 1;
   --fondu: 0;
+  --message: 0;
   --cercle: 0;
   --approche: 0;
   --zoom: 1;
@@ -83,6 +84,39 @@
   height: 40%;
   background: var(--blanc);
   animation: montee-descente 1.8s ease-in-out 2.8s infinite;
+}
+
+.montee__message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: min(900px, calc(100% - 32px));
+  margin: 0;
+  text-align: center;
+  color: var(--blanc);
+  opacity: var(--message);
+  transform: translate(-50%, calc(-50% + (1 - var(--message)) * 24px));
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.montee__message-ligne {
+  font-weight: 600;
+  font-size: clamp(14px, 1.4vw, 18px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.montee__message-accent {
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: clamp(30px, 4.4vw, 64px);
+  line-height: 1.1;
 }
 
 .montee__noir {

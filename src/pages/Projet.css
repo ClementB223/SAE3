@@ -1,0 +1,161 @@
+.recit {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 48px calc(120 * var(--u));
+}
+
+.recit__question {
+  font-size: clamp(32px, calc(56 * var(--u)), 56px);
+  color: var(--rouge);
+}
+
+.recit__fort {
+  font-weight: 600;
+}
+
+.barrieres {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.barriere {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 4fr) minmax(0, 7fr);
+  gap: 24px 48px;
+  padding: 36px 0;
+  border-top: 1px solid var(--blanc);
+}
+
+.barriere__numero {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--or);
+}
+
+.barriere__chiffre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.barriere__chiffre .chiffres__texte {
+  color: var(--blanc-doux);
+}
+
+.barriere__titre {
+  margin: 0 0 14px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(28px, calc(40 * var(--u)), 40px);
+  line-height: 1.05;
+}
+
+.rencontre__colonnes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.rencontre__carte {
+  padding: 32px;
+  background: var(--or-voile);
+}
+
+.rencontre__titre {
+  margin: 0 0 16px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(26px, calc(36 * var(--u)), 36px);
+  line-height: 1.1;
+}
+
+.rencontre__phrase {
+  margin-top: calc(72 * var(--u));
+  text-align: center;
+  color: var(--rouge);
+}
+
+.etapes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etape {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 24px 48px;
+  padding: 32px 0;
+  border-top: 1px solid var(--noir);
+}
+
+.etape--image {
+  grid-template-columns: 80px minmax(0, 5fr) minmax(0, 6fr);
+  align-items: start;
+}
+
+.etape__numero {
+  font-family: var(--police-titre);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--rouge);
+}
+
+.etape__titre {
+  margin: 0 0 12px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: clamp(28px, calc(40 * var(--u)), 40px);
+  line-height: 1.05;
+}
+
+.etape__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.campagne {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.campagne__carte {
+  padding-top: 20px;
+  border-top: 1px solid var(--noir);
+}
+
+.campagne__titre {
+  margin: 0 0 12px;
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+@media (max-width: 900px) {
+  .recit,
+  .rencontre__colonnes,
+  .campagne {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .barriere,
+  .etape,
+  .etape--image {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .rencontre__carte {
+    padding: 24px;
+  }
+}

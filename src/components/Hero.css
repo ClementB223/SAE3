@@ -63,6 +63,16 @@
   line-height: 1.55;
 }
 
+.hero__signature {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rouge);
+}
+
 .hero__photo {
   display: block;
   width: calc(1014 * var(--u));
