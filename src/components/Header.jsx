@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import logoNoir from '../assets/logo/logo-collab-noir.png'
+import logoBlanc from '../assets/logo/logo-collab.png'
 import iconeRecherche from '../assets/figma/recherche.svg'
 import iconeCoeur from '../assets/figma/coeur.svg'
 import './Header.css'
@@ -36,8 +37,9 @@ function useSectionActive() {
   return actif
 }
 
-export default function Header({ selection = 2 }) {
+export default function Header({ selection = 2, superpose = false }) {
   const actif = useSectionActive()
+  const idMenu = useId()
   const [ouvert, setOuvert] = useState(false)
   const bouton = useRef(null)
   const panneau = useRef(null)
@@ -66,10 +68,10 @@ export default function Header({ selection = 2 }) {
   const fermer = () => setOuvert(false)
 
   return (
-    <header className={`header${ouvert ? ' header--ouvert' : ''}`}>
+    <header className={`header${superpose ? ' header--superpose' : ''}${ouvert ? ' header--ouvert' : ''}`}>
       <div className="header__barre">
         <a className="header__logos" href="#accueil" aria-label="Festival de Cannes × Vestiaire Collective, accueil">
-          <img className="header__logo" src={logoNoir} alt="" width="48" height="42" />
+          <img className="header__logo" src={superpose ? logoBlanc : logoNoir} alt="" width="48" height="42" />
         </a>
 
         <nav className="header__nav" aria-label="Navigation principale">
@@ -96,7 +98,7 @@ export default function Header({ selection = 2 }) {
             ref={bouton}
             className="header__burger"
             aria-expanded={ouvert}
-            aria-controls="menu-mobile"
+            aria-controls={idMenu}
             aria-label={ouvert ? 'Fermer le menu' : 'Ouvrir le menu'}
             onClick={() => setOuvert(!ouvert)}
           >
@@ -106,7 +108,7 @@ export default function Header({ selection = 2 }) {
         </div>
       </div>
 
-      <div className="menu" id="menu-mobile" ref={panneau} hidden={!ouvert}>
+      <div className="menu" id={idMenu} ref={panneau} hidden={!ouvert}>
         <nav className="menu__nav" aria-label="Menu">
           <ul className="menu__liste">
             {liens.map(({ libelle, href }, i) => (
@@ -128,7 +130,7 @@ export default function Header({ selection = 2 }) {
             ))}
           </ul>
         </nav>
-        <p className="menu__devise">Seconde main, premier rôle.</p>
+        <p className="menu__devise">Seconde main, premier rôle</p>
       </div>
     </header>
   )

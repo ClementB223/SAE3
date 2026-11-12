@@ -29,7 +29,7 @@ export default function Hero() {
       <h1 className="hero__titre" id="hero-titre">
         <span className="hero__ligne1">Le tapis rouge </span>
         <span className="hero__ligne2">
-          S’ouvre <em>à tous.</em>
+          S’ouvre <em>à tous</em>
         </span>
       </h1>
 
@@ -55,9 +55,6 @@ export default function Hero() {
           </a>
           <a className="lien" href="#defile">Explorer le défilé</a>
         </div>
-        <p className="hero__legende">
-          Élodie, Noé, Sora et Abde sur les marches du Palais, le soir de l’ouverture.
-        </p>
       </div>
     </section>
   )

@@ -4,12 +4,11 @@
   --or: #c5a059;
   --noir: #000000;
   --rouge: #b5121b;
-  --rouge-fonce: #8e0e15;
-  --gris: #57524a;
-  --sable: #e6ded0;
-  --trait: #dcd2c0;
-  --pierre: #cfc8ba;
-  --rouge-clair: #e2414c;
+
+  --noir-doux: rgba(0, 0, 0, 0.65);
+  --blanc-doux: rgba(255, 255, 255, 0.72);
+  --or-voile: color-mix(in srgb, var(--or) 16%, var(--blanc));
+  --or-voile-fort: color-mix(in srgb, var(--or) 30%, var(--blanc));
 
   --police-titre: 'Albra', 'Playfair Display', Georgia, serif;
   --police-texte: 'Helvetica Now Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -65,7 +64,7 @@ img {
 }
 
 .bouton:hover {
-  background: var(--rouge-fonce);
+  background: var(--noir);
 }
 
 @media (max-width: 480px) {
@@ -110,7 +109,7 @@ img {
 }
 
 .lien:hover {
-  color: var(--rouge);
+  color: var(--orange);
 }
 
 .lien--clair {
@@ -118,7 +117,7 @@ img {
 }
 
 .lien--clair:hover {
-  color: var(--or);
+  color: var(--orange);
 }
 
 .filet {

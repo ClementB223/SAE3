@@ -30,9 +30,9 @@ export default function Manifeste() {
           <span className="manifeste__ligne manifeste__ligne--2">
             <span className="manifeste__barre">
               <span>de </span>
-              <s>norme.</s>
+              <s>norme</s>
             </span>
-            <em className="manifeste__annotation">que des histoires.</em>
+            <em className="manifeste__annotation">que des histoires</em>
           </span>
         </h2>
 

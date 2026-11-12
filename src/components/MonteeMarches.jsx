@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Header from './Header.jsx'
 import './MonteeMarches.css'
 
 const FRAMES = 60
@@ -118,6 +119,7 @@ export default function MonteeMarches() {
 
   return (
     <section className="montee" ref={section} aria-label="Montée des marches">
+      <Header superpose />
       <div className="montee__scene">
         <canvas className="montee__canvas" ref={canvas} aria-hidden="true" />
         <div className="montee__vignette" aria-hidden="true" />

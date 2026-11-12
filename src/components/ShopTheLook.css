@@ -30,7 +30,7 @@
 .shop__legende {
   margin-top: 12px;
   font-size: 14px;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .point {
@@ -52,7 +52,8 @@
   border: 2px solid var(--blanc);
   border-radius: 50%;
   background: var(--rouge);
-  font-family: var(--police-titre);
+  font-family: var(--police-texte);
+  font-weight: 600;
   font-size: 18px;
   color: var(--blanc);
   transition: transform 0.2s;
@@ -63,8 +64,8 @@
 }
 
 .point--actif .point__pastille {
-  background: var(--blanc);
-  color: var(--rouge);
+  background: var(--orange);
+  color: var(--blanc);
 }
 
 .point__etiquette {
@@ -109,7 +110,7 @@
   margin: 0;
   font-size: 17px;
   line-height: 1.55;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .shop__liste {
@@ -130,13 +131,13 @@
 }
 
 .ligne--active {
-  background: var(--sable);
+  background: var(--or-voile);
 }
 
 .ligne__numero {
   width: 30px;
-  font-family: var(--police-titre);
-  font-size: 26px;
+  font-weight: 600;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -148,11 +149,11 @@
   flex-shrink: 0;
   width: 76px;
   height: 92px;
-  background: var(--sable);
+  background: var(--or-voile);
 }
 
 .ligne--active .ligne__vignette {
-  background: var(--trait);
+  background: var(--or-voile-fort);
 }
 
 .ligne__vignette img {
@@ -178,15 +179,14 @@
 }
 
 .ligne__nom {
-  font-family: var(--police-titre);
-  font-style: italic;
-  font-size: 22px;
-  line-height: 1.1;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.25;
 }
 
 .ligne__details {
   font-size: 14px;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .ligne__prix {
@@ -197,8 +197,8 @@
 }
 
 .ligne__montant {
-  font-family: var(--police-titre);
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 20px;
   line-height: 1;
 }
 

@@ -22,7 +22,7 @@
 .defile__legende {
   margin: 14px 0 0 calc(40 * var(--u));
   font-size: 14px;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .defile__texte {
@@ -60,7 +60,7 @@
 }
 
 .defile__para--gris {
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .defile__para--lettrine::first-letter {

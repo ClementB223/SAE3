@@ -21,13 +21,18 @@
 
 .bande__phrase {
   padding-left: 0.3em;
-  font-family: var(--police-titre);
-  font-size: 26px;
-  letter-spacing: 0.02em;
+  font-family: var(--police-texte);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .bande__phrase em {
+  font-family: var(--police-titre);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0;
   text-transform: none;
 }
 

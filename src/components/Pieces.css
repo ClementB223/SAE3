@@ -36,7 +36,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .pieces__grille {
@@ -58,7 +58,7 @@
   position: relative;
   aspect-ratio: 322 / 429;
   overflow: hidden;
-  background: var(--sable);
+  background: var(--or-voile);
 }
 
 .piece__image {
@@ -103,9 +103,13 @@
   background: var(--noir);
 }
 
+.statut--reservee {
+  color: var(--orange);
+}
+
 .statut--reservee .statut__repere {
   background: none;
-  border: 1.5px solid var(--noir);
+  border: 1.5px solid var(--orange);
 }
 
 .statut--vendue {
@@ -132,17 +136,15 @@
 
 .piece__nom {
   margin: 0;
-  font-family: var(--police-titre);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 1.1;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.25;
 }
 
 .piece__details {
   font-size: 14px;
   line-height: 1.4;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 .piece__pied {
@@ -155,15 +157,15 @@
 }
 
 .piece__prix {
-  font-family: var(--police-titre);
-  font-size: 28px;
+  font-weight: 600;
+  font-size: 22px;
   line-height: 1;
   text-decoration: none;
 }
 
 del.piece__prix {
   text-decoration: line-through;
-  color: var(--gris);
+  color: var(--noir-doux);
 }
 
 @media (max-width: 1100px) {

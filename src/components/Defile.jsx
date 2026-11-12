@@ -18,8 +18,8 @@ export default function Defile() {
       <div className="defile__texte">
         <p className="rubrique">Le défilé</p>
         <h2 className="defile__titre" id="defile-titre">
-          <span className="defile__titre1">Quatre silhouettes.</span>
-          <em className="defile__titre2">Zéro pièce neuve.</em>
+          <span className="defile__titre1">Quatre silhouettes</span>
+          <em className="defile__titre2">Zéro pièce neuve</em>
         </h2>
         <p className="defile__para defile__para--lettrine">
           Le soir de l’ouverture, avant les premières projections, quatre silhouettes montent les marches. Pas d’égéries, pas de

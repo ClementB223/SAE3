@@ -85,14 +85,6 @@
   gap: 28px;
 }
 
-.hero__legende {
-  max-width: calc(668 * var(--u));
-  margin: calc(8 * var(--u)) 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: right;
-  color: var(--gris);
-}
 
 @media (max-width: 720px) {
   .hero {
@@ -137,8 +129,4 @@
     gap: 20px 28px;
   }
 
-  .hero__legende {
-    max-width: none;
-    text-align: left;
-  }
 }

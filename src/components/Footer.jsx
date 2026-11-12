@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="footer__cloture">
         <img className="footer__photo" src={photoCloture} alt="" loading="lazy" />
         <div className="footer__phrase">
-          <p className="footer__citation">Le tapis rouge s’ouvre à tous.</p>
+          <p className="footer__citation">Le tapis rouge s’ouvre à tous</p>
           <p className="footer__credit">Élodie, Noé, Sora et Abde, le soir de l’ouverture.</p>
         </div>
       </div>
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="footer__haut">
           <div className="footer__signature">
             <img className="footer__logo" src={logoBlanc} alt="Festival de Cannes × Vestiaire Collective" width="80" height="70" />
-            <p className="footer__devise">Seconde main, premier rôle.</p>
+            <p className="footer__devise">Seconde main, premier rôle</p>
           </div>
 
           <nav className="footer__liens" aria-label="Plan du site">
@@ -43,8 +43,7 @@ export default function Footer() {
         </div>
 
         <p className="footer__mentions">
-          Projet étudiant fictif — BUT MMI 3. Ni produit ni approuvé par le Festival de Cannes ou Vestiaire Collective. Défilé,
-          participants, pièces et prix imaginés pour l’exercice ; les marques citées servent d’exemple. Visuels de travail du projet.
+          Projet étudiant fictif
         </p>
       </div>
     </footer>

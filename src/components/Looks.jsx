@@ -71,9 +71,15 @@ export default function Looks() {
         <span className="looks__titre1">Les looks</span> <em className="looks__titre2">du défilé</em>
       </h2>
       <div className="looks__grille">
-        {looks.map((look, i) => (
-          <div className={`looks__case looks__case--${i + 1}`} key={look.numero}>
-            <Look look={look} />
+        {[0, 1].map((colonne) => (
+          <div className="looks__colonne" key={colonne}>
+            {looks.map((look, i) =>
+              i % 2 === colonne ? (
+                <div className={`looks__case looks__case--${i + 1}`} key={look.numero}>
+                  <Look look={look} />
+                </div>
+              ) : null,
+            )}
           </div>
         ))}
       </div>

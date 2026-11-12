@@ -45,7 +45,7 @@
 .footer__credit {
   margin: 0;
   font-size: 14px;
-  color: var(--pierre);
+  color: var(--blanc-doux);
 }
 
 .footer__contenu {
@@ -106,13 +106,13 @@
 
 .footer__colonne a {
   font-size: 15px;
-  color: var(--pierre);
+  color: var(--blanc-doux);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer__colonne a:hover {
-  color: var(--or);
+  color: var(--orange);
 }
 
 .footer__mentions {
@@ -121,7 +121,7 @@
   border-top: 1px solid var(--blanc);
   font-size: 13px;
   line-height: 1.6;
-  color: var(--pierre);
+  color: var(--blanc-doux);
 }
 
 @media (max-width: 900px) {
