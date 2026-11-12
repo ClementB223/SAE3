@@ -51,10 +51,12 @@ export default function Engagement() {
           <li>
             <span className="assos__nom">Collectif 50/50</span>
             <span className="assos__texte">L’égalité et la diversité dans le cinéma</span>
+            <span className="assos__finance">Votre achat finance des formations pour des techniciennes et techniciens trop peu représentés</span>
           </li>
           <li>
             <span className="assos__nom">AAFA</span>
             <span className="assos__texte">Les actrices et acteurs, de tous les profils</span>
+            <span className="assos__finance">Votre achat finance des castings ouverts à tous les corps, âges et handicaps</span>
           </li>
         </ul>
       </section>
@@ -65,6 +67,7 @@ export default function Engagement() {
           <figcaption>
             <span className="diptyque__titre">Le pop-up solidaire</span>
             <span className="diptyque__texte">Sur la Croisette, pendant tout le festival</span>
+            <span className="diptyque__plus">On y essaie les pièces du défilé et on y rencontre les participants.</span>
           </figcaption>
         </figure>
         <figure className="diptyque__volet diptyque__volet--decale">
@@ -72,6 +75,7 @@ export default function Engagement() {
           <figcaption>
             <span className="diptyque__titre">La conciergerie inclusive</span>
             <span className="diptyque__texte">Une tenue pour chaque accrédité, quelle que soit sa taille</span>
+            <span className="diptyque__plus">Sélection, essayage et retouches sur place, sans frais, pour monter les marches.</span>
           </figcaption>
         </figure>
       </section>

@@ -124,6 +124,15 @@
   color: var(--noir-doux);
 }
 
+.assos__finance {
+  max-width: 400px;
+  margin-top: 6px;
+  padding-left: 12px;
+  border-left: 2px solid var(--rouge);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .diptyque {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -163,6 +172,13 @@
 .diptyque__texte {
   font-size: 15px;
   color: var(--noir-doux);
+}
+
+.diptyque__plus {
+  max-width: 440px;
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 @media (max-width: 720px) {
