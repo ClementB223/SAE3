@@ -1,7 +1,25 @@
-
 import { Link } from 'react-router-dom'
 import { formatPrix } from '../donnees.js'
+import { useSelection } from '../selection-contexte.js'
+import { Coeur } from './PieceElements.jsx'
 import './PieceCarte.css'
+
+export function BoutonCoeur({ piece, className = 'piece__favori' }) {
+  const { contient, basculer } = useSelection()
+  const choisie = contient(piece.slug)
+  return (
+    <button
+      type="button"
+      className={className}
+      aria-pressed={choisie}
+      aria-label={`${choisie ? 'Retirer' : 'Ajouter'} « ${piece.nom} » ${choisie ? 'de' : 'à'} ma sélection`}
+      title={choisie ? 'Retirer de ma sélection' : 'Ajouter à ma sélection'}
+      onClick={() => basculer(piece.slug)}
+    >
+      <Coeur plein={choisie} />
+    </button>
+  )
+}
 
 export default function PieceCarte({ piece, titre = 'h3' }) {
   const Titre = titre
@@ -11,12 +29,7 @@ export default function PieceCarte({ piece, titre = 'h3' }) {
       <Link className="piece__lien" to={`/pieces/${piece.slug}`}>
         <div className="piece__vignette">
           {piece.image ? (
-            <img
-              className="piece__image"
-              src={piece.image}
-              alt=""
-              loading="lazy"
-            />
+            <img className="piece__image" src={piece.image} alt="" loading="lazy" />
           ) : (
             <span className="piece__vide">Visuel à venir</span>
           )}
@@ -32,6 +45,7 @@ export default function PieceCarte({ piece, titre = 'h3' }) {
           <span className="piece__voir">Voir la pièce →</span>
         </div>
       </Link>
+      <BoutonCoeur piece={piece} />
     </li>
   )
 }

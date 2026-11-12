@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { formatPrix, parSlug, participants, piecesDuLook, statuts } from '../donnees.js'
+import { BoutonCoeur } from './PieceCarte.jsx'
 import './ShopTheLook.css'
 
 const personne = parSlug(participants, 'peter-dinklage')
@@ -84,6 +85,7 @@ export default function ShopTheLook() {
                     Voir la pièce
                   </Link>
                 </span>
+                <BoutonCoeur piece={p} className="ligne__favori" />
               </li>
             ))}
           </ul>

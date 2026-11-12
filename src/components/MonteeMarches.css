@@ -7,7 +7,7 @@
   --approche: 0;
   --zoom: 1;
   position: relative;
-  height: 850vh;
+  height: 260vh;
   background: var(--noir);
   color: var(--blanc);
 }
@@ -27,6 +27,7 @@
   width: 100%;
   height: 100%;
   transform: scale(var(--zoom));
+  will-change: transform;
   animation: montee-apparition 1.8s ease-out both;
 }
 
@@ -125,6 +126,7 @@
   background: var(--noir);
   opacity: var(--fondu);
   pointer-events: none;
+  will-change: opacity;
 }
 
 .montee__salle {
@@ -134,6 +136,7 @@
   overflow: hidden;
   background: var(--noir);
   clip-path: circle(calc(var(--cercle) * 75%) at 50% 50%);
+  will-change: clip-path;
 }
 
 .salle__plan {
@@ -168,6 +171,36 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.montee__passer {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vh, 36px);
+  z-index: 5;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--blanc);
+  font-family: var(--police-texte);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.montee[data-etat='lecture'] .montee__passer {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.montee__passer:hover {
+  border-color: var(--or);
+  color: var(--or);
 }
 
 .salle__son {

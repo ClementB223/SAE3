@@ -64,10 +64,6 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-
-        <p className="footer__mentions">
-          Projet étudiant fictif
-        </p>
       </div>
     </footer>
   )

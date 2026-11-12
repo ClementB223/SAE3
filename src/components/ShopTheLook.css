@@ -202,6 +202,35 @@
   line-height: 1;
 }
 
+.ligne__favori {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--noir);
+  border-radius: 50%;
+  background: var(--blanc);
+  color: var(--noir);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.ligne__favori:hover {
+  transform: scale(1.08);
+}
+
+.ligne__favori[aria-pressed='true'] {
+  border-color: var(--rouge);
+  color: var(--rouge);
+}
+
+.ligne__favori svg {
+  width: 18px;
+  height: 18px;
+}
+
 @media (max-width: 900px) {
   .shop {
     padding: 72px var(--marge);

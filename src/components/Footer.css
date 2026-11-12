@@ -114,14 +114,6 @@
   color: var(--orange);
 }
 
-.footer__mentions {
-  margin: 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--blanc);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--blanc-doux);
-}
 
 @media (max-width: 900px) {
   .footer__cloture {

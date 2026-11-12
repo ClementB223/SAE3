@@ -136,7 +136,7 @@
 .barrage__barre {
   position: relative;
   font-family: var(--police-titre);
-  font-size: clamp(48px, calc(120 * var(--u)), 120px);
+  font-size: clamp(42px, calc(96 * var(--u)), 96px);
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
@@ -155,7 +155,7 @@
 
 .barrage__reponse {
   font-family: var(--police-titre);
-  font-size: clamp(32px, calc(64 * var(--u)), 64px);
+  font-size: clamp(28px, calc(52 * var(--u)), 52px);
   line-height: 1;
   color: var(--rouge);
   transform: rotate(-3deg);
@@ -277,10 +277,10 @@
   }
 
   .barrage__barre {
-    font-size: 13vw;
+    font-size: 11vw;
   }
 
   .barrage__reponse {
-    font-size: 9vw;
+    font-size: 7.5vw;
   }
 }

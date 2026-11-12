@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
-import { formatPrix, pieces } from '../donnees.js'
+import { formatPrix, parSlug, pieces } from '../donnees.js'
 import PieceCarte from '../components/PieceCarte.jsx'
 import { useSelection } from '../selection-contexte.js'
 import './pages.css'
 
 export default function Selection() {
-  const { slugs } = useSelection()
-  const choisies = pieces.filter((p) => slugs.includes(p.slug))
-  const total = choisies.filter((p) => p.statut !== 'vendue').reduce((s, p) => s + p.prix, 0)
+  const { slugs, vider } = useSelection()
+  const choisies = slugs.map((s) => parSlug(pieces, s)).filter(Boolean)
+  const achetables = choisies.filter((p) => p.statut !== 'vendue')
+  const total = achetables.reduce((s, p) => s + p.prix, 0)
+  const vendues = choisies.length - achetables.length
 
   return (
     <div className="page">
@@ -29,10 +31,16 @@ export default function Selection() {
           </h1>
         </div>
         {choisies.length > 0 && (
-          <p className="entete-page__chapeau">
-            Total des pièces encore disponibles : <strong>{formatPrix(total)}</strong>, entièrement reversés aux associations
-            partenaires.
-          </p>
+          <div className="selection__resume">
+            <p className="entete-page__chapeau" aria-live="polite">
+              Total des pièces encore disponibles : <strong>{formatPrix(total)}</strong>, entièrement reversés aux associations
+              partenaires.
+              {vendues > 0 && ` ${vendues} pièce${vendues > 1 ? 's ont' : ' a'} déjà trouvé preneur.`}
+            </p>
+            <button type="button" className="lien selection__vider" onClick={vider}>
+              Vider ma sélection
+            </button>
+          </div>
         )}
       </header>
 
